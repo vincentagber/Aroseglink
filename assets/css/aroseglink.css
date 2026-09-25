@@ -1,0 +1,1209 @@
+/* ==========================================================================
+   Aroseglink Services Limited - Official Brand Theme
+   Brand Palette: Black (#111111) & Red (#E51A24)
+   ========================================================================== */
+
+:root {
+  --brand-red: #E51A24;
+  --brand-red-hover: #C4121B;
+  --brand-black: #111111;
+  --brand-dark-2: #18181B;
+  --brand-dark-3: #222226;
+  --color-primary: #E51A24;
+  --color-heading-1: #111111;
+  --color-title: #111111;
+}
+
+/* Header Top Area */
+.header-top-area-wrapper {
+  background: #111111 !important;
+}
+
+.header-top-area-wrapper .header-top-one-wrapper .left .mail a:hover,
+.header-top-area-wrapper .header-top-one-wrapper .left .phone-top a:hover,
+.header-top-area-wrapper .header-top-one-wrapper .right .top-nav li a:hover,
+.social-wrapper-one li a:hover i {
+  color: var(--brand-red) !important;
+}
+
+.header-top-area-wrapper .header-top-one-wrapper .left .phone-top {
+  position: relative;
+  margin-right: 30px;
+}
+
+.header-top-area-wrapper .header-top-one-wrapper .left .phone-top a {
+  color: #fff;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 0;
+  transition: 0.3s;
+}
+
+.header-top-area-wrapper .header-top-one-wrapper .left .phone-top a i {
+  color: var(--brand-red);
+}
+
+/* Navigation & Header Main */
+.header-main-one-wrapper .main-header .nav-area ul li.main-nav > a:hover {
+  color: var(--brand-red) !important;
+}
+
+.header-main-one-wrapper .main-header .nav-area ul li.main-nav:hover > a {
+  color: var(--brand-red) !important;
+}
+
+/* Primary Button - Red by default, Black hover */
+.rts-btn.btn-primary {
+  background: var(--brand-red) !important;
+  color: #ffffff !important;
+  border: 2px solid var(--brand-red) !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.rts-btn.btn-primary::before {
+  background: var(--brand-black) !important;
+}
+
+.rts-btn.btn-primary:hover {
+  background: var(--brand-black) !important;
+  border-color: var(--brand-black) !important;
+  color: #ffffff !important;
+}
+
+/* White Button - White with Black text, Red hover */
+.rts-btn.btn-primary.btn-white {
+  background: #ffffff !important;
+  color: var(--brand-black) !important;
+  border: 2px solid #ffffff !important;
+}
+
+.rts-btn.btn-primary.btn-white::before {
+  background: var(--brand-red) !important;
+}
+
+.rts-btn.btn-primary.btn-white:hover {
+  background: var(--brand-red) !important;
+  border-color: var(--brand-red) !important;
+  color: #ffffff !important;
+}
+
+/* Banner Styling */
+.banner-inner-two-content .pre-title span {
+  color: var(--brand-red) !important;
+}
+
+.banner-inner-two-content .title {
+  color: #ffffff !important;
+}
+
+/* Subtitles & Badges */
+.title-style-two .pre,
+.single-blog-area-one p span {
+  color: var(--brand-red) !important;
+}
+
+.title-style-two .bg-content {
+  -webkit-text-stroke: 1px rgba(229, 26, 36, 0.18) !important;
+  color: transparent !important;
+}
+
+/* Icons & Checks */
+.check-wrapper-area .single-check i,
+.call-and-sign-area .call-area .icon i,
+.map-information-2-footer .contact-information-main-wrapper .signle-contact-information .icon i,
+.contact-info-area-wrapper-p .single-contact-info .icon i,
+.signle-consultancy .icon i,
+.single-service-signle-wrapper .arrow-right i {
+  color: var(--brand-red) !important;
+}
+
+/* Service Card Hover & Accent */
+.single-service-signle-wrapper {
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #eaeaea;
+}
+
+.single-service-signle-wrapper:hover {
+  border-color: var(--brand-red) !important;
+  box-shadow: 0 10px 30px rgba(229, 26, 36, 0.12) !important;
+}
+
+.single-service-signle-wrapper:hover .information .title {
+  color: var(--brand-red) !important;
+}
+
+.single-service-signle-wrapper .arrow-right:hover {
+  color: var(--brand-red) !important;
+}
+
+/* Counter & Highlights */
+.counter-about-area .counter.title,
+.single-counter-up-wrapper .counter {
+  color: var(--brand-red) !important;
+}
+
+/* Call to Action */
+.rts-call-to-action-area-two {
+  background-color: var(--brand-black) !important;
+}
+
+/* Video Play Button */
+.vedio-icone .video-play-button span {
+  border-left-color: var(--brand-red) !important;
+}
+
+.vedio-icone .video-play-button::before,
+.vedio-icone .video-play-button::after {
+  background: rgba(229, 26, 36, 0.6) !important;
+}
+
+/* Swiper navigation */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: var(--brand-red) !important;
+  color: #ffffff !important;
+  border-color: var(--brand-red) !important;
+}
+
+.progress-wrap svg.progress-circle path {
+  stroke: var(--brand-red) !important;
+}
+
+/* Footer Section */
+.rts-footer-area.footer-two {
+  background: #111111 !important;
+}
+
+.map-information-2-footer {
+  background: #18181B !important;
+  border-left: 4px solid var(--brand-red) !important;
+}
+
+.map-information-2-footer .title-main {
+  color: #ffffff !important;
+}
+
+.map-information-2-footer .contact-information-main-wrapper .signle-contact-information .information-wrapper span {
+  color: #a0a0a0 !important;
+}
+
+.map-information-2-footer .contact-information-main-wrapper .signle-contact-information .information-wrapper .title {
+  color: #ffffff !important;
+  transition: 0.3s;
+}
+
+.map-information-2-footer .contact-information-main-wrapper .signle-contact-information .information-wrapper a:hover .title {
+  color: var(--brand-red) !important;
+}
+
+.footer-one-single-wized .wized-title .title {
+  color: #ffffff !important;
+}
+
+.footer-one-single-wized .wized-title .title::after {
+  background: var(--brand-red) !important;
+}
+
+.footer-one-single-wized .quick-link-inner ul.links li a:hover {
+  color: var(--brand-red) !important;
+}
+
+.rts-copyright-area {
+  background: #0B0B0C !important;
+  border-top: 1px solid #222226 !important;
+}
+
+/* Sidebar Menu */
+.side-bar {
+  background: #111111 !important;
+  color: #ffffff;
+}
+
+.side-bar .close-icon-menu i {
+  color: #ffffff;
+}
+
+.side-bar .close-icon-menu:hover i {
+  color: var(--brand-red);
+}
+
+.side-bar .get-in-touch .title {
+  color: var(--brand-red) !important;
+}
+
+.side-bar .get-in-touch .single i {
+  color: var(--brand-red) !important;
+}
+
+.side-bar .get-in-touch .single a:hover {
+  color: var(--brand-red) !important;
+}
+
+.side-bar .social-wrapper-two.menu a:hover i {
+  color: var(--brand-red) !important;
+}
+
+/* ==========================================================================
+   Clean Navigation Menu (No Dropdowns, No Icons, No Arrows)
+   ========================================================================== */
+.nav-area ul {
+  display: flex !important;
+  align-items: center !important;
+  gap: 20px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.nav-area ul li.main-nav {
+  position: relative !important;
+  list-style: none !important;
+  padding: 30px 0 !important;
+}
+
+.nav-area ul li.main-nav > a {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #111111 !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease !important;
+  display: inline-block !important;
+  white-space: nowrap !important;
+}
+
+.nav-area ul li.main-nav:hover > a,
+.nav-area ul li.main-nav.active > a {
+  color: var(--brand-red) !important;
+}
+
+/* Strictly suppress any dropdown arrows, chevrons or icons on desktop nav */
+.nav-area ul li.main-nav::after,
+.nav-area ul li.main-nav::before,
+.nav-area ul li.main-nav > a::after,
+.nav-area ul li.main-nav > a::before,
+.nav-area ul li::after,
+.nav-area ul li::before {
+  display: none !important;
+  content: none !important;
+  visibility: hidden !important;
+}
+
+/* Mobile Menu Clean Styles */
+.mobile-menu .mainmenu {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.mobile-menu .mainmenu li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  list-style: none !important;
+}
+
+.mobile-menu .mainmenu li a.main {
+  display: block !important;
+  padding: 14px 0 !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease, padding-left 0.3s ease !important;
+}
+
+.mobile-menu .mainmenu li a.main:hover,
+.mobile-menu .mainmenu li.active a.main {
+  color: var(--brand-red) !important;
+  padding-left: 6px !important;
+}
+
+/* Strictly suppress any dropdown arrows, chevrons or submenus on mobile */
+.mobile-menu .mainmenu li::after,
+.mobile-menu .mainmenu li::before,
+.mobile-menu .mainmenu li a::after,
+.mobile-menu .mainmenu li a::before {
+  display: none !important;
+  content: none !important;
+  visibility: hidden !important;
+}
+
+/* ==========================================================================
+   Social Media Links & Icons
+   ========================================================================== */
+.social-wrapper-one li a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.social-wrapper-one li a:hover i {
+  color: var(--brand-red) !important;
+  transform: translateY(-2px);
+}
+
+.side-bar .social-wrapper-two.menu {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+}
+
+.side-bar .social-wrapper-two.menu a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease !important;
+}
+
+.side-bar .social-wrapper-two.menu a::after {
+  display: none !important;
+}
+
+.side-bar .social-wrapper-two.menu a:hover {
+  background: var(--brand-red) !important;
+  color: #ffffff !important;
+  transform: translateY(-3px) !important;
+}
+
+.side-bar .social-wrapper-two.menu a:hover i {
+  color: #ffffff !important;
+}
+
+.mobile-menu .social-wrapper-one ul {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  flex-wrap: wrap !important;
+  padding: 0 !important;
+  margin: 25px 0 0 0 !important;
+  list-style: none !important;
+}
+
+.mobile-menu .social-wrapper-one ul li a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: all 0.3s ease !important;
+}
+
+.mobile-menu .social-wrapper-one ul li a:hover {
+  background: var(--brand-red) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+}
+
+.mobile-menu .social-wrapper-one ul li a:hover i {
+  color: #ffffff !important;
+}
+
+.footer-logo-area-left-8 ul.social-area-wrapper-two {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 20px 0 0 0 !important;
+}
+
+.footer-logo-area-left-8 ul.social-area-wrapper-two li a {
+  width: 40px !important;
+  height: 40px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 6px !important;
+  background: #222226 !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease !important;
+}
+
+.footer-logo-area-left-8 ul.social-area-wrapper-two li a i {
+  color: #ffffff !important;
+  font-size: 15px !important;
+  transition: all 0.3s ease !important;
+}
+
+.footer-logo-area-left-8 ul.social-area-wrapper-two li a:hover {
+  background: var(--brand-red) !important;
+  transform: translateY(-3px) !important;
+}
+
+.footer-logo-area-left-8 ul.social-area-wrapper-two li a:hover i {
+  color: #ffffff !important;
+}
+
+/* Hide RTL button everywhere */
+.rtl-ltr-switcher-btn {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Top bar cleanup - social wrapper right alignment */
+.header-top-one-wrapper .right {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+}
+
+.header-top-one-wrapper .right .social-wrapper-one {
+  margin-left: auto !important;
+}
+
+/* Enhanced Professional Footer Contact Information & Icons */
+.footer-8-area-bg .footer-one-single-wized .signle-footer-contact-8 {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 16px !important;
+  margin-bottom: 22px !important;
+}
+
+.footer-8-area-bg .footer-one-single-wized .signle-footer-contact-8 .icon {
+  min-width: 42px !important;
+  width: 42px !important;
+  height: 42px !important;
+  background: rgba(229, 26, 36, 0.12) !important;
+  border: 1px solid rgba(229, 26, 36, 0.3) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  transition: all 0.3s ease !important;
+  margin-top: 2px !important;
+}
+
+.footer-8-area-bg .footer-one-single-wized .signle-footer-contact-8:hover .icon {
+  background: var(--brand-red) !important;
+  border-color: var(--brand-red) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(229, 26, 36, 0.35) !important;
+}
+
+.footer-8-area-bg .footer-one-single-wized .signle-footer-contact-8 .icon i {
+  color: var(--brand-red) !important;
+  font-size: 17px !important;
+  line-height: 1 !important;
+  transition: color 0.3s ease !important;
+}
+
+.footer-8-area-bg .footer-one-single-wized .signle-footer-contact-8:hover .icon i {
+  color: #ffffff !important;
+}
+
+.footer-8-area-bg .footer-one-single-wized .signle-footer-contact-8 .inner-content .title {
+  color: #ffffff !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  margin-bottom: 4px !important;
+}
+
+.footer-8-area-bg .footer-one-single-wized .signle-footer-contact-8 .inner-content a {
+  color: #A0A5B1 !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  transition: color 0.3s ease !important;
+  display: inline-block !important;
+}
+
+.footer-8-area-bg .footer-one-single-wized .signle-footer-contact-8 .inner-content a:hover {
+  color: #ffffff !important;
+}
+
+/* Destination Cards & Study Abroad Styling */
+.destination-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  border: 1px solid #f0f0f0;
+}
+
+.destination-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.destination-card .thumb {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.destination-card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.destination-card:hover .thumb img {
+  transform: scale(1.08);
+}
+
+.destination-card .content {
+  padding: 24px;
+}
+
+.destination-card .badge-country {
+  display: inline-block;
+  background: rgba(229, 26, 36, 0.1);
+  color: var(--brand-red);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.destination-card .title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #111111;
+}
+
+.destination-card .desc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.destination-card .features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.destination-card .features-list li {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.destination-card .features-list li i {
+  color: var(--brand-red);
+  font-size: 13px;
+}
+
+/* ==========================================================================
+   Coventry University Buttons
+   ========================================================================== */
+.coventry-buttons-wrapper {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin-top: 35px !important;
+}
+
+.btn-coventry-apply {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 15px 32px !important;
+  background: var(--brand-red, #E51A24) !important;
+  color: #ffffff !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+  border: 2px solid var(--brand-red, #E51A24) !important;
+  box-shadow: 0 8px 24px rgba(229, 26, 36, 0.35) !important;
+  transition: all 0.35s ease !important;
+  text-decoration: none !important;
+}
+
+.btn-coventry-apply:hover {
+  background: #c8131c !important;
+  border-color: #c8131c !important;
+  color: #ffffff !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 28px rgba(229, 26, 36, 0.45) !important;
+}
+
+.btn-coventry-facebook {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 15px 30px !important;
+  background: #0B1B3D !important;
+  color: #ffffff !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+  border: 2px solid #0B1B3D !important;
+  box-shadow: 0 8px 24px rgba(11, 27, 61, 0.25) !important;
+  transition: all 0.35s ease !important;
+  text-decoration: none !important;
+}
+
+.btn-coventry-facebook:hover {
+  background: #1877F2 !important;
+  border-color: #1877F2 !important;
+  color: #ffffff !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 28px rgba(24, 119, 242, 0.4) !important;
+}
+
+.btn-coventry-apply i,
+.btn-coventry-facebook i {
+  font-size: 16px !important;
+  transition: transform 0.3s ease !important;
+}
+
+.btn-coventry-apply:hover i {
+  transform: translateX(3px) !important;
+}
+
+/* ==========================================================================
+   4-Step Roadmap Section & Action Button
+   ========================================================================== */
+.roadmap-section {
+  background: linear-gradient(135deg, #07132B 0%, #0D2048 100%) !important;
+  padding: 100px 0 110px 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.roadmap-badge {
+  display: inline-block !important;
+  background: rgba(229, 26, 36, 0.15) !important;
+  border: 1px solid rgba(229, 26, 36, 0.4) !important;
+  color: var(--brand-red, #E51A24) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  padding: 6px 18px !important;
+  border-radius: 30px !important;
+  margin-bottom: 12px !important;
+}
+
+.roadmap-step-card {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px !important;
+  padding: 36px 26px !important;
+  height: 100% !important;
+  transition: all 0.4s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.roadmap-step-card:hover {
+  transform: translateY(-8px) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(229, 26, 36, 0.5) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35) !important;
+}
+
+.roadmap-step-card .step-number-watermark {
+  font-size: 42px !important;
+  font-weight: 900 !important;
+  color: rgba(255, 255, 255, 0.12) !important;
+  position: absolute !important;
+  top: 18px !important;
+  right: 22px !important;
+  font-family: 'DM Sans', sans-serif !important;
+  line-height: 1 !important;
+}
+
+.roadmap-step-card .step-icon-badge {
+  width: 54px !important;
+  height: 54px !important;
+  background: linear-gradient(135deg, var(--brand-red, #E51A24) 0%, #a81018 100%) !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 22px !important;
+  box-shadow: 0 6px 16px rgba(229, 26, 36, 0.4) !important;
+  flex-shrink: 0 !important;
+}
+
+.roadmap-step-card .step-icon-badge i {
+  color: #ffffff !important;
+  font-size: 22px !important;
+}
+
+.roadmap-step-card .step-title {
+  color: #ffffff !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  margin-bottom: 12px !important;
+  line-height: 1.35 !important;
+}
+
+.roadmap-step-card .step-desc {
+  color: #B0BED4 !important;
+  font-size: 14.5px !important;
+  line-height: 1.65 !important;
+  margin-bottom: 20px !important;
+  flex-grow: 1 !important;
+}
+
+.roadmap-step-card .step-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 20px !important;
+  padding: 4px 12px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #E2E8F0 !important;
+  width: fit-content !important;
+}
+
+.roadmap-step-card .step-tag i {
+  color: var(--brand-red, #E51A24) !important;
+  font-size: 11px !important;
+}
+
+.roadmap-cta-box {
+  padding: 45px 35px !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 20px !important;
+  max-width: 860px !important;
+  margin: 55px auto 0 auto !important;
+  text-align: center !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.btn-roadmap-action {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  padding: 18px 46px !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  background: var(--brand-red, #E51A24) !important;
+  border-radius: 50px !important;
+  border: none !important;
+  box-shadow: 0 10px 30px rgba(229, 26, 36, 0.45) !important;
+  transition: all 0.35s ease !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+}
+
+.btn-roadmap-action:hover {
+  background: #c8131c !important;
+  color: #ffffff !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 15px 38px rgba(229, 26, 36, 0.55) !important;
+}
+
+.btn-roadmap-action i {
+  font-size: 16px !important;
+  transition: transform 0.3s ease !important;
+}
+
+.btn-roadmap-action:hover i {
+  transform: translateX(5px) !important;
+}
+
+/* ==========================================================================
+   Accordion & FAQ Click Reliability
+   ========================================================================== */
+.faq-wrapper-inner-page .accordion-item {
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 10px !important;
+  margin-bottom: 16px !important;
+  overflow: hidden !important;
+  background: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important;
+  transition: box-shadow 0.3s ease !important;
+}
+
+.faq-wrapper-inner-page .accordion-item:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07) !important;
+}
+
+.faq-wrapper-inner-page .accordion-button {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: #111111 !important;
+  background: #ffffff !important;
+  padding: 20px 24px !important;
+  border: none !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  text-align: left !important;
+  transition: color 0.3s ease, background 0.3s ease !important;
+}
+
+.faq-wrapper-inner-page .accordion-button::after {
+  content: "\f078" !important;
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free", "fontawesome", sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 14px !important;
+  background-image: none !important;
+  transform: none !important;
+  margin-left: auto !important;
+  transition: transform 0.3s ease, color 0.3s ease !important;
+}
+
+.faq-wrapper-inner-page .accordion-button:not(.collapsed) {
+  color: var(--brand-red, #E51A24) !important;
+  background: #FFF5F5 !important;
+}
+
+.faq-wrapper-inner-page .accordion-button:not(.collapsed)::after {
+  content: "\f077" !important;
+  color: var(--brand-red, #E51A24) !important;
+}
+
+.faq-wrapper-inner-page .accordion-body {
+  padding: 18px 24px 24px 24px !important;
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  color: #555555 !important;
+  background: #ffffff !important;
+}
+
+.faq-wrapper-inner-page .accordion-collapse {
+  transition: all 0.35s ease-in-out !important;
+}
+
+.faq-wrapper-inner-page .accordion-collapse.collapse:not(.show) {
+  display: none !important;
+}
+
+.faq-wrapper-inner-page .accordion-collapse.collapse.show {
+  display: block !important;
+}
+
+/* Video Play Button Styling */
+.vedio-icone .video-play-button {
+  cursor: pointer !important;
+}
+
+/* ==========================================================================
+   Index Page Spacing Fixes (Blog to Footer & Footer Bottom)
+   ========================================================================== */
+.rts-blog-area {
+  margin-bottom: 0 !important;
+}
+
+.footer-8-area-bg {
+  background-color: #0c0e12 !important;
+  background-size: cover !important;
+  background-position: center !important;
+  margin-bottom: 0 !important;
+}
+
+.copyright-area-main-wrapper {
+  background-color: #08090c !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  margin-bottom: 0 !important;
+}
+
+.copyright-8-wrapper p {
+  padding: 24px 0 !important;
+  margin: 0 !important;
+}
+
+body, html {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* ==========================================================================
+   Featured Study Abroad Campaigns (UK & Canada Banners)
+   ========================================================================== */
+.campaign-spotlight-section {
+  padding: 85px 0;
+  background: #ffffff;
+}
+
+.campaign-card-row {
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+.campaign-card-row:last-child {
+  margin-bottom: 0;
+}
+
+.campaign-img-wrapper {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  background: #fdfdfd;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  text-align: center;
+}
+
+.campaign-img-wrapper:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.14);
+}
+
+.campaign-img-wrapper img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: inline-block;
+  border-radius: 16px;
+  object-fit: contain;
+}
+
+.campaign-content-box {
+  padding: 20px 30px;
+}
+
+.campaign-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(229, 26, 36, 0.08);
+  color: var(--brand-red, #E51A24);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  margin-bottom: 14px;
+}
+
+.campaign-title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.35;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+.campaign-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4B5563;
+  margin-bottom: 22px;
+}
+
+.campaign-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 26px 0;
+}
+
+.campaign-highlights li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+.campaign-highlights li i {
+  color: var(--brand-red, #E51A24);
+  font-size: 15px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.campaign-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 28px;
+  background: var(--brand-red, #E51A24);
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(229, 26, 36, 0.25);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campaign-btn:hover {
+  background: #c7141d;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(229, 26, 36, 0.35);
+}
+
+@media (max-width: 991px) {
+  .campaign-card-row {
+    margin-bottom: 50px;
+  }
+  .campaign-content-box {
+    padding: 24px 0 0 0;
+  }
+}
+
+/* ==========================================================================
+   Call Area Icon & Gallery Grid Styling
+   ========================================================================== */
+.call-and-sign-area .call-area .icon {
+  background: var(--brand-red, #E51A24) !important;
+  width: 55px !important;
+  height: 55px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 6px 18px rgba(229, 26, 36, 0.3) !important;
+  flex-shrink: 0 !important;
+}
+
+.call-and-sign-area .call-area .icon i {
+  color: #ffffff !important;
+  font-size: 22px !important;
+  display: inline-block !important;
+  transform: none !important;
+}
+
+.gallery-area-main-wrapper-4 .single-gallery .thumbnail {
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  height: 320px;
+  background: #f4f6f9;
+}
+
+.gallery-area-main-wrapper-4 .single-gallery .thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-area-main-wrapper-4 .single-gallery:hover .thumbnail img {
+  transform: scale(1.06);
+}
+
+/* Contact Page - Enhanced Customer Support & Contact Info */
+.contact-info-area-wrapper-p {
+  background: var(--brand-red) !important;
+  padding: 45px 35px !important;
+  border-radius: 16px !important;
+  box-shadow: 0 15px 40px rgba(229, 26, 36, 0.25) !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.contact-info-area-wrapper-p .single-contact-info {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 18px !important;
+  margin-bottom: 32px !important;
+}
+
+.contact-info-area-wrapper-p .single-contact-info:last-child {
+  margin-bottom: 0 !important;
+}
+
+.contact-info-area-wrapper-p .single-contact-info .icon {
+  width: 50px !important;
+  min-width: 50px !important;
+  height: 50px !important;
+  background: #ffffff !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.3s ease !important;
+  margin-top: 2px !important;
+}
+
+.contact-info-area-wrapper-p .single-contact-info:hover .icon {
+  transform: translateY(-2px) scale(1.04) !important;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22) !important;
+}
+
+.contact-info-area-wrapper-p .single-contact-info .icon i {
+  color: var(--brand-red) !important;
+  font-size: 20px !important;
+  line-height: 1 !important;
+}
+
+.contact-info-area-wrapper-p .single-contact-info .info-wrapper span {
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  margin-bottom: 6px !important;
+  display: block !important;
+}
+
+.contact-info-area-wrapper-p .single-contact-info .info-wrapper a {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  transition: opacity 0.2s ease !important;
+  text-decoration: none !important;
+}
+
+.contact-info-area-wrapper-p .single-contact-info .info-wrapper a:hover {
+  opacity: 0.9 !important;
+  color: #ffffff !important;
+}
+
+.thumbnail-contact-form {
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 16px !important;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1) !important;
+  margin: 0 !important;
+}
+
+.thumbnail-contact-form img {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 520px !important;
+  object-fit: cover !important;
+  display: block !important;
+  border-radius: 16px !important;
+  transition: transform 0.4s ease !important;
+}
+
+.thumbnail-contact-form:hover img {
+  transform: scale(1.03) !important;
+}
+
+
+
+
+
+
