@@ -2225,6 +2225,164 @@
             border-top: 1px solid #eef2f6;
             border-bottom: 1px solid #eef2f6;
         }
+        .holding-parent-card {
+            background: linear-gradient(135deg, #0b1120 0%, #111c30 60%, #1a2744 100%);
+            border-radius: 20px;
+            padding: 48px 42px;
+            color: #ffffff;
+            box-shadow: 0 20px 45px rgba(11, 17, 32, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 50px;
+        }
+        .holding-parent-card::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            right: -120px;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(229, 26, 36, 0.22) 0%, rgba(229, 26, 36, 0) 70%);
+            pointer-events: none;
+        }
+        .holding-parent-card::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0) 70%);
+            pointer-events: none;
+        }
+        .holding-badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .holding-badge-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(229, 26, 36, 0.18);
+            color: #ff6b72;
+            border: 1px solid rgba(229, 26, 36, 0.45);
+            font-size: 12.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            padding: 6px 16px;
+            border-radius: 30px;
+        }
+        .holding-badge-reg {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #e2e8f0;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            font-size: 12.5px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 30px;
+        }
+        .holding-title {
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 18px;
+            letter-spacing: -0.5px;
+        }
+        .holding-lead-p {
+            color: #e2e8f0;
+            font-size: 16px;
+            line-height: 1.75;
+            margin-bottom: 14px;
+        }
+        .holding-sub-p {
+            color: #94a3b8;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+        .holding-sector-pill {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #f1f5f9;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 14px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+        }
+        .holding-sector-pill:hover {
+            background: rgba(229, 26, 36, 0.18);
+            border-color: rgba(229, 26, 36, 0.45);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        .holding-sector-pill i {
+            color: var(--brand-red, #E51A24);
+        }
+        .holding-jurisdictions {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        .holding-capabilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 25px;
+        }
+        .holding-cap-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .holding-cap-box i {
+            font-size: 20px;
+            color: var(--brand-red, #E51A24);
+            flex-shrink: 0;
+        }
+        .holding-cap-box span {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #e2e8f0;
+            line-height: 1.35;
+        }
+        @media (max-width: 768px) {
+            .holding-parent-card {
+                padding: 30px 20px;
+            }
+            .holding-title {
+                font-size: 24px;
+            }
+            .holding-jurisdictions {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .holding-capabilities {
+                grid-template-columns: 1fr;
+            }
+        }
         .subsidiary-card {
             background: #ffffff;
             border: 1px solid #e9edf3;
@@ -2273,12 +2431,96 @@
     <section class="our-subsidiaries-area rts-section-gap">
         <div class="container">
             <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <!-- Holding Parent Company Showcase -->
+                    <div class="holding-parent-card">
+                        <div class="row align-items-center">
+                            <div class="col-lg-12">
+                                <div class="holding-badge-group">
+                                    <span class="holding-badge-primary">
+                                        <i class="fa-solid fa-landmark"></i> Diversified Investment &amp; Holding Group
+                                    </span>
+                                    <span class="holding-badge-reg">
+                                        <i class="fa-solid fa-certificate" style="color: #f59e0b;"></i> Enterprise Number: 2025/071786/07 &bull; CIPC Annual Returns (CoR 30.1)
+                                    </span>
+                                </div>
+                                <h2 class="holding-title">Aroseglinks Zillionaire Group Heirs Holdings</h2>
+                                <p class="holding-lead-p">
+                                    <strong>Aroseglinks Zillionaire Group Heirs Holdings</strong>, Enterprise Number <strong>2025/071786/07</strong>, is a diversified investment and holding company that acquires, builds, and scales durable businesses across <strong>Africa, the United States, the UAE, Qatar, and the United Kingdom</strong>, with a focus on private equity, venture capital, enterprise IT, AI and innovation, healthcare and biotechnology, agriculture, logistics, electric vehicles, real estate, construction, and financial technology.
+                                </p>
+                                <p class="holding-sub-p">
+                                    The Group combines long-term investment capital with operating insight to identify high-potential businesses, strengthen their capabilities, and accelerate sustainable growth through AI and innovation labs, funding accelerators, R&D hubs, and technology platforms that transform applied innovation into measurable operating advantage.
+                                </p>
+                                <p class="holding-sub-p" style="margin-bottom: 22px;">
+                                    Its portfolio also extends into theme parks and resorts, developing eco-friendly leisure destinations that integrate entertainment, tourism, and long-term real-asset value; media and film, financing content and entertainment.
+                                </p>
+
+                                <!-- Strategic Sectors Grid -->
+                                <div style="margin-top: 25px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 22px;">
+                                    <span style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #94a3b8; margin-bottom: 14px;">
+                                        Core Investment Verticals &amp; Focus Sectors
+                                    </span>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="holding-sector-pill"><i class="fa-solid fa-chart-line"></i> Private Equity &amp; Venture Capital</span>
+                                        <span class="holding-sector-pill"><i class="fa-solid fa-microchip"></i> Enterprise IT, AI &amp; Innovation</span>
+                                        <span class="holding-sector-pill"><i class="fa-solid fa-dna"></i> Healthcare &amp; Biotechnology</span>
+                                        <span class="holding-sector-pill"><i class="fa-solid fa-seedling"></i> Agriculture &amp; Logistics</span>
+                                        <span class="holding-sector-pill"><i class="fa-solid fa-charging-station"></i> Electric Vehicles (EV)</span>
+                                        <span class="holding-sector-pill"><i class="fa-solid fa-city"></i> Real Estate &amp; Construction</span>
+                                        <span class="holding-sector-pill"><i class="fa-solid fa-coins"></i> Financial Technology (FinTech)</span>
+                                        <span class="holding-sector-pill"><i class="fa-solid fa-umbrella-beach"></i> Eco-Friendly Theme Parks &amp; Resorts</span>
+                                        <span class="holding-sector-pill"><i class="fa-solid fa-film"></i> Media, Film &amp; Entertainment</span>
+                                    </div>
+                                </div>
+
+                                <!-- Acceleration Capabilities -->
+                                <div class="holding-capabilities">
+                                    <div class="holding-cap-box">
+                                        <i class="fa-solid fa-brain"></i>
+                                        <span>AI &amp; Innovation Labs</span>
+                                    </div>
+                                    <div class="holding-cap-box">
+                                        <i class="fa-solid fa-rocket"></i>
+                                        <span>Funding Accelerators</span>
+                                    </div>
+                                    <div class="holding-cap-box">
+                                        <i class="fa-solid fa-flask"></i>
+                                        <span>Applied R&amp;D Hubs</span>
+                                    </div>
+                                    <div class="holding-cap-box">
+                                        <i class="fa-solid fa-cubes-stacked"></i>
+                                        <span>Durable Tech Platforms</span>
+                                    </div>
+                                </div>
+
+                                <!-- Jurisdictions -->
+                                <div class="holding-jurisdictions">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <i class="fa-solid fa-globe" style="color: var(--brand-red, #E51A24); font-size: 16px;"></i>
+                                        <span style="font-size: 13.5px; font-weight: 600; color: #e2e8f0;">International Operating Footprint:</span>
+                                    </div>
+                                    <div class="d-flex flex-wrap gap-2 align-items-center">
+                                        <span style="background: rgba(255, 255, 255, 0.08); padding: 5px 12px; border-radius: 6px; font-size: 12.5px; font-weight: 600; color: #f8fafc;">🌍 Africa</span>
+                                        <span style="background: rgba(255, 255, 255, 0.08); padding: 5px 12px; border-radius: 6px; font-size: 12.5px; font-weight: 600; color: #f8fafc;">🇺🇸 United States</span>
+                                        <span style="background: rgba(255, 255, 255, 0.08); padding: 5px 12px; border-radius: 6px; font-size: 12.5px; font-weight: 600; color: #f8fafc;">🇦🇪 United Arab Emirates</span>
+                                        <span style="background: rgba(255, 255, 255, 0.08); padding: 5px 12px; border-radius: 6px; font-size: 12.5px; font-weight: 600; color: #f8fafc;">🇶🇦 Qatar</span>
+                                        <span style="background: rgba(255, 255, 255, 0.08); padding: 5px 12px; border-radius: 6px; font-size: 12.5px; font-weight: 600; color: #f8fafc;">🇬🇧 United Kingdom</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operating Subsidiaries Subheading -->
+            <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                    <div class="title-style-one center mb--50 text-center">
-                        <span class="pre" style="color: var(--brand-red, #E51A24); font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin: 0 auto 16px auto; display: inline-flex; justify-content: center;">Portfolio Governance</span>
-                        <h2 class="title rts-text-anime-style-1" style="font-weight: 700; font-size: 36px; margin-top: 10px; margin-bottom: 16px;">Our Subsidiaries</h2>
-                        <p class="disc" style="max-width: 840px; margin: 0 auto; font-size: 16px; line-height: 1.65; color: #5D666F;">
-                            Aroseglink Services Limited operates as an integrated holding group, deploying specialized subsidiaries across strategic advisory, executive leadership, international education, and human capital development. Each entity functions with dedicated governance and domain expertise to deliver focused execution across African, British, and global markets. This structure ensures institutional discipline while scaling our portfolio footprint internationally.
+                    <div class="title-style-one center mb--40 text-center">
+                        <span class="pre" style="color: var(--brand-red, #E51A24); font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin: 0 auto 12px auto; display: inline-flex; justify-content: center;">Portfolio Governance</span>
+                        <h2 class="title rts-text-anime-style-1" style="font-weight: 700; font-size: 32px; margin-top: 6px; margin-bottom: 14px;">Our Operating Portfolio &amp; Subsidiaries</h2>
+                        <p class="disc" style="max-width: 840px; margin: 0 auto; font-size: 15.5px; line-height: 1.65; color: #5D666F;">
+                            Operating under the strategic governance and institutional capital stewardship of Aroseglinks Zillionaire Group Heirs Holdings, our dedicated specialized subsidiaries deliver focused execution across strategic advisory, executive leadership, international education, and human capital development.
                         </p>
                     </div>
                 </div>
