@@ -1202,6 +1202,133 @@ body, html {
   transform: scale(1.03) !important;
 }
 
+/* ==========================================================================
+   Executive & Professional Team Section Styles
+   ========================================================================== */
+.team-white-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.03);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.team-white-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--brand-red, #E51A24);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
+}
+
+.team-white-thumb {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.team-white-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.team-white-card:hover .team-white-thumb img {
+  transform: scale(1.04);
+}
+
+.team-white-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.team-white-badge i {
+  color: var(--brand-red, #E51A24);
+  font-size: 12px;
+}
+
+.team-white-info {
+  padding: 22px 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.team-white-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.team-white-role {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--brand-red, #E51A24);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.team-white-desc {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+.team-white-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.team-white-social a {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.team-white-social a:hover {
+  background: var(--brand-red, #E51A24);
+  color: #ffffff;
+  border-color: var(--brand-red, #E51A24);
+}
+
+
 
 
 

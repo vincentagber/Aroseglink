@@ -15,11 +15,13 @@
     <link rel="stylesheet preload" href="assets/css/plugins/magnifying-popup.css" as="style">
     <link rel="stylesheet preload" href="assets/css/plugins/odometer.css" as="style">
     <link rel="stylesheet preload" href="assets/css/vendor/bootstrap.min.css" as="style">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet preload" as="style">
     <link rel="preload" as="image" href="assets/images/banner/21.webp" >
     <link rel="stylesheet preload" href="assets/css/style.css" as="style">
@@ -2225,162 +2227,488 @@
             border-top: 1px solid #eef2f6;
             border-bottom: 1px solid #eef2f6;
         }
-        .holding-parent-card {
-            background: linear-gradient(135deg, #0b1120 0%, #111c30 60%, #1a2744 100%);
+        /* =========================================================
+           Aroseglinks Zillionaire Group Heirs Holdings - White Theme
+           Clean Institutional Architecture & Modern Typography
+           ========================================================= */
+        .holding-white-card {
+            background: #ffffff;
             border-radius: 20px;
-            padding: 48px 42px;
-            color: #ffffff;
-            box-shadow: 0 20px 45px rgba(11, 17, 32, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 45px 42px;
+            color: #1e293b;
+            box-shadow: 0 12px 35px -8px rgba(15, 23, 42, 0.07), 0 2px 6px rgba(15, 23, 42, 0.03);
+            border: 1px solid #e2e8f0;
             position: relative;
             overflow: hidden;
             margin-bottom: 50px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
-        .holding-parent-card::before {
+        .holding-white-card::before {
             content: '';
             position: absolute;
-            top: -120px;
-            right: -120px;
-            width: 320px;
-            height: 320px;
-            background: radial-gradient(circle, rgba(229, 26, 36, 0.22) 0%, rgba(229, 26, 36, 0) 70%);
-            pointer-events: none;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--brand-red, #E51A24) 0%, #1e293b 60%, #3b82f6 100%);
         }
-        .holding-parent-card::after {
-            content: '';
-            position: absolute;
-            bottom: -100px;
-            left: -100px;
-            width: 280px;
-            height: 280px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0) 70%);
-            pointer-events: none;
-        }
-        .holding-badge-group {
+        .holding-white-header {
             display: flex;
+            align-items: center;
+            justify-content: space-between;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 16px;
+            margin-bottom: 22px;
         }
-        .holding-badge-primary {
+        .holding-white-tag-lead {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(229, 26, 36, 0.18);
-            color: #ff6b72;
-            border: 1px solid rgba(229, 26, 36, 0.45);
+            background: #fff1f2;
+            color: var(--brand-red, #E51A24);
+            border: 1px solid #ffe4e6;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            padding: 6px 14px;
+            border-radius: 20px;
+        }
+        .holding-white-cipc {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #334155;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+        .holding-white-cipc i {
+            color: var(--brand-red, #E51A24);
+            font-size: 13px;
+        }
+        .holding-white-cipc strong {
+            color: #0f172a;
+            letter-spacing: 0.3px;
+        }
+        .holding-white-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.25;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+        .holding-white-sub {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 26px;
+        }
+        /* Corporate Entity Hierarchy Ribbon */
+        .holding-white-entities-framework {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 16px 20px;
+            margin-bottom: 28px;
+            display: grid;
+            grid-template-columns: 1fr auto 1.2fr auto 1fr;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.03);
+        }
+        @media (max-width: 991px) {
+            .holding-white-entities-framework {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .holding-white-entity-arrow {
+                display: none;
+            }
+        }
+        .holding-white-entity-box {
+            background: #f8fafc;
+            border: 1px solid #edf2f7;
+            border-radius: 12px;
+            padding: 14px 16px;
+            transition: all 0.2s ease;
+        }
+        .holding-white-entity-box:hover {
+            background: #ffffff;
+            border-color: var(--brand-red, #E51A24);
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+        }
+        .holding-white-entity-box.featured-parent {
+            background: #ffffff;
+            border: 1.5px solid var(--brand-red, #E51A24);
+            box-shadow: 0 6px 20px rgba(229, 26, 36, 0.06);
+        }
+        .holding-white-entity-role-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #64748b;
+            margin-bottom: 6px;
+        }
+        .holding-white-entity-box.featured-parent .holding-white-entity-role-badge {
+            color: var(--brand-red, #E51A24);
+        }
+        .holding-white-entity-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.35;
+            margin-bottom: 4px;
+        }
+        .holding-white-entity-subtext {
+            font-size: 11.5px;
+            color: #64748b;
+            line-height: 1.4;
+        }
+        .holding-white-entity-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #cbd5e1;
+            font-size: 16px;
+        }
+        .holding-white-overview {
+            display: grid;
+            grid-template-columns: 1.35fr 1fr;
+            gap: 26px;
+            align-items: stretch;
+            margin-bottom: 32px;
+        }
+        .holding-white-mandate {
+            background: #f8fafc;
+            border-left: 4px solid var(--brand-red, #E51A24);
+            border-radius: 0 12px 12px 0;
+            padding: 22px 24px;
+            border-top: 1px solid #f1f5f9;
+            border-right: 1px solid #f1f5f9;
+            border-bottom: 1px solid #f1f5f9;
+            margin-bottom: 16px;
+        }
+        .holding-white-lead-p {
+            color: #1e293b;
+            font-size: 14.5px;
+            line-height: 1.7;
+            margin: 0;
+            font-weight: 400;
+        }
+        .holding-white-lead-p strong {
+            color: #0f172a;
+            font-weight: 700;
+        }
+        .holding-white-sub-p {
+            color: #475569;
+            font-size: 14px;
+            line-height: 1.68;
+            margin-bottom: 14px;
+        }
+        .holding-white-sub-p:last-child {
+            margin-bottom: 0;
+        }
+        .holding-white-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .holding-white-stat-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 18px 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 0.25s ease;
+        }
+        .holding-white-stat-box:hover {
+            border-color: #cbd5e1;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+        }
+        .holding-white-stat-val {
+            font-family: 'Outfit', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .holding-white-stat-val i {
+            font-size: 18px;
+            color: var(--brand-red, #E51A24);
+        }
+        .holding-white-stat-title {
             font-size: 12.5px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 3px;
+        }
+        .holding-white-stat-sub {
+            font-size: 11px;
+            color: #64748b;
+            line-height: 1.35;
+        }
+        .holding-white-divider {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 10px;
+        }
+        .holding-white-divider-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.2px;
-            padding: 6px 16px;
-            border-radius: 30px;
-        }
-        .holding-badge-reg {
+            color: #0f172a;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.08);
-            color: #e2e8f0;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            font-size: 12.5px;
-            font-weight: 600;
-            padding: 6px 16px;
-            border-radius: 30px;
+            margin: 0;
         }
-        .holding-title {
-            color: #ffffff;
-            font-size: 32px;
-            font-weight: 800;
-            line-height: 1.25;
-            margin-bottom: 18px;
-            letter-spacing: -0.5px;
-        }
-        .holding-lead-p {
-            color: #e2e8f0;
-            font-size: 16px;
-            line-height: 1.75;
-            margin-bottom: 14px;
-        }
-        .holding-sub-p {
-            color: #94a3b8;
-            font-size: 15px;
-            line-height: 1.7;
-            margin-bottom: 14px;
-        }
-        .holding-sector-pill {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            color: #f1f5f9;
-            font-size: 13px;
-            font-weight: 600;
-            padding: 8px 14px;
-            border-radius: 8px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.25s ease;
-        }
-        .holding-sector-pill:hover {
-            background: rgba(229, 26, 36, 0.18);
-            border-color: rgba(229, 26, 36, 0.45);
-            color: #ffffff;
-            transform: translateY(-2px);
-        }
-        .holding-sector-pill i {
+        .holding-white-divider-title i {
             color: var(--brand-red, #E51A24);
+            font-size: 15px;
         }
-        .holding-jurisdictions {
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 16px 20px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 15px;
-            margin-top: 25px;
+        .holding-white-divider-sub {
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
         }
-        .holding-capabilities {
+        .holding-white-engines-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 25px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-bottom: 32px;
         }
-        .holding-cap-box {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        .holding-white-engine-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 20px 18px;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .holding-white-engine-card:hover {
+            background: #ffffff;
+            border-color: var(--brand-red, #E51A24);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+        }
+        .holding-white-engine-icon {
+            width: 40px;
+            height: 40px;
             border-radius: 10px;
-            padding: 14px 16px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
             display: flex;
             align-items: center;
-            gap: 12px;
+            justify-content: center;
+            color: var(--brand-red, #E51A24);
+            font-size: 18px;
+            margin-bottom: 14px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
         }
-        .holding-cap-box i {
-            font-size: 20px;
+        .holding-white-engine-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            display: block;
+        }
+        .holding-white-engine-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 6px;
+        }
+        .holding-white-engine-desc {
+            font-size: 12.5px;
+            color: #475569;
+            line-height: 1.5;
+            margin: 0;
+        }
+        .holding-white-verticals-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+        .holding-white-vertical-card {
+            background: #ffffff;
+            border: 1px solid #e9edf3;
+            border-radius: 12px;
+            padding: 13px 15px;
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            transition: all 0.2s ease;
+        }
+        .holding-white-vertical-card:hover {
+            border-color: var(--brand-red, #E51A24);
+            background: #fffbfb;
+            transform: translateX(3px);
+        }
+        .holding-white-vertical-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
             color: var(--brand-red, #E51A24);
             flex-shrink: 0;
         }
-        .holding-cap-box span {
+        .holding-white-vertical-info {
+            flex-grow: 1;
+            min-width: 0;
+        }
+        .holding-white-vertical-name {
+            font-family: 'Outfit', sans-serif;
             font-size: 13.5px;
-            font-weight: 600;
-            color: #e2e8f0;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .holding-white-vertical-sub {
+            font-size: 11px;
+            color: #64748b;
+            font-weight: 500;
+            display: block;
+        }
+        .holding-white-footprint {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 18px 22px;
+        }
+        .holding-white-footprint-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .holding-white-footprint-label {
+            font-family: 'Outfit', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .holding-white-footprint-label i {
+            color: var(--brand-red, #E51A24);
+        }
+        .holding-white-footprint-note {
+            font-size: 11.5px;
+            color: #64748b;
+        }
+        .holding-white-footprint-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+        .holding-white-region-pill {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 10px 12px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.2s ease;
+        }
+        .holding-white-region-pill:hover {
+            border-color: #cbd5e1;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04);
+        }
+        .holding-white-region-top {
+            font-family: 'Outfit', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .holding-white-region-desc {
+            font-size: 10.5px;
+            color: #64748b;
             line-height: 1.35;
         }
-        @media (max-width: 768px) {
-            .holding-parent-card {
-                padding: 30px 20px;
+        @media (max-width: 1199px) {
+            .holding-white-engines-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-            .holding-title {
+            .holding-white-footprint-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width: 991px) {
+            .holding-white-overview {
+                grid-template-columns: 1fr;
+            }
+            .holding-white-verticals-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .holding-white-card {
+                padding: 28px 20px;
+                border-radius: 16px;
+            }
+            .holding-white-title {
                 font-size: 24px;
             }
-            .holding-jurisdictions {
+            .holding-white-stats {
+                grid-template-columns: 1fr;
+            }
+            .holding-white-engines-grid {
+                grid-template-columns: 1fr;
+            }
+            .holding-white-verticals-grid {
+                grid-template-columns: 1fr;
+            }
+            .holding-white-footprint-grid {
+                grid-template-columns: 1fr;
+            }
+            .holding-white-header {
                 flex-direction: column;
                 align-items: flex-start;
-            }
-            .holding-capabilities {
-                grid-template-columns: 1fr;
             }
         }
         .subsidiary-card {
@@ -2428,84 +2756,291 @@
             font-weight: 500;
         }
     </style>
-    <section class="our-subsidiaries-area rts-section-gap">
+    <section class="our-subsidiaries-area rts-section-gap" style="background: linear-gradient(180deg, #f8fafd 0%, #ffffff 100%); border-top: 1px solid #eef2f6; border-bottom: 1px solid #eef2f6;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
-                    <!-- Holding Parent Company Showcase -->
-                    <div class="holding-parent-card">
-                        <div class="row align-items-center">
-                            <div class="col-lg-12">
-                                <div class="holding-badge-group">
-                                    <span class="holding-badge-primary">
-                                        <i class="fa-solid fa-landmark"></i> Diversified Investment &amp; Holding Group
-                                    </span>
-                                    <span class="holding-badge-reg">
-                                        <i class="fa-solid fa-certificate" style="color: #f59e0b;"></i> Enterprise Number: 2025/071786/07 &bull; CIPC Annual Returns (CoR 30.1)
-                                    </span>
+                    <!-- Holding Parent Company Showcase - White Theme -->
+                    <div class="holding-white-card">
+                        
+                        <!-- Top Header Bar -->
+                        <div class="holding-white-header">
+                            <div>
+                                <span class="holding-white-tag-lead">
+                                    <i class="bi bi-bank2"></i> Diversified Investment &amp; Holding Group
+                                </span>
+                            </div>
+                            <div class="holding-white-cipc">
+                                <i class="bi bi-patch-check-fill"></i>
+                                <span>Enterprise Number: <strong>2025/071786/07</strong> &bull; CIPC Annual Returns (CoR 30.1)</span>
+                            </div>
+                        </div>
+
+                        <!-- Brand Title & Subtitle -->
+                        <h2 class="holding-white-title">Aroseglinks Zillionaire Group Heirs Holdings</h2>
+                        <div class="holding-white-sub">
+                            Cross-Continental Private Equity &bull; Frontier Innovation &bull; Durable Enterprise Assets
+                        </div>
+
+                        <!-- Group Legal Entity & Governance Framework -->
+                        <div class="holding-white-entities-framework">
+                            <div class="holding-white-entity-box">
+                                <div class="holding-white-entity-role-badge">
+                                    <i class="bi bi-shield-lock"></i> Trust Stewardship
                                 </div>
-                                <h2 class="holding-title">Aroseglinks Zillionaire Group Heirs Holdings</h2>
-                                <p class="holding-lead-p">
-                                    <strong>Aroseglinks Zillionaire Group Heirs Holdings</strong>, Enterprise Number <strong>2025/071786/07</strong>, is a diversified investment and holding company that acquires, builds, and scales durable businesses across <strong>Africa, the United States, the UAE, Qatar, and the United Kingdom</strong>, with a focus on private equity, venture capital, enterprise IT, AI and innovation, healthcare and biotechnology, agriculture, logistics, electric vehicles, real estate, construction, and financial technology.
+                                <div class="holding-white-entity-name">Aroseglinks Zillionaire Group Heirs Holdings Trust</div>
+                                <div class="holding-white-entity-subtext">Master Asset Protection &amp; Intergenerational Trust</div>
+                            </div>
+                            <div class="holding-white-entity-arrow">
+                                <i class="bi bi-chevron-right"></i>
+                            </div>
+                            <div class="holding-white-entity-box featured-parent">
+                                <div class="holding-white-entity-role-badge">
+                                    <i class="bi bi-patch-check-fill"></i> Parent Investment Group
+                                </div>
+                                <div class="holding-white-entity-name">Aroseglinks Zillionaire Group Heirs Holdings</div>
+                                <div class="holding-white-entity-subtext">Enterprise No: 2025/071786/07 &bull; CIPC CoR 30.1</div>
+                            </div>
+                            <div class="holding-white-entity-arrow">
+                                <i class="bi bi-chevron-right"></i>
+                            </div>
+                            <div class="holding-white-entity-box">
+                                <div class="holding-white-entity-role-badge">
+                                    <i class="bi bi-briefcase"></i> Operating Enterprise
+                                </div>
+                                <div class="holding-white-entity-name">Aroseglinks Zillionaire Consulting (Pty) Ltd</div>
+                                <div class="holding-white-entity-subtext">Strategic AI Advisory &amp; Enterprise Execution</div>
+                            </div>
+                        </div>
+
+                        <!-- Overview: Executive Mandate + Key Metrics -->
+                        <div class="holding-white-overview">
+                            <div>
+                                <div class="holding-white-mandate">
+                                    <p class="holding-white-lead-p">
+                                        Anchored by <strong>Aroseglinks Zillionaire Group Heirs Holdings Trust</strong>, <strong>Aroseglinks Zillionaire Group Heirs Holdings</strong>, Enterprise Number <strong>2025/071786/07</strong>, operates as a diversified cross-continental investment and holding company with operating entities including <strong>Aroseglinks Zillionaire Consulting (Pty) Ltd</strong>. The Group acquires, builds, and scales durable businesses across <strong>Africa, the United States, the UAE, Qatar, and the United Kingdom</strong>, with a focus on private equity, venture capital, enterprise IT, AI and innovation, healthcare and biotechnology, agriculture, logistics, electric vehicles, real estate, construction, and financial technology.
+                                    </p>
+                                </div>
+                                <p class="holding-white-sub-p">
+                                    The Group combines long-term investment capital with operating insight to identify high-potential businesses, strengthen their capabilities, and accelerate sustainable growth through AI and innovation labs, funding accelerators, R&amp;D hubs, and technology platforms that transform applied innovation into measurable operating advantage.
                                 </p>
-                                <p class="holding-sub-p">
-                                    The Group combines long-term investment capital with operating insight to identify high-potential businesses, strengthen their capabilities, and accelerate sustainable growth through AI and innovation labs, funding accelerators, R&D hubs, and technology platforms that transform applied innovation into measurable operating advantage.
-                                </p>
-                                <p class="holding-sub-p" style="margin-bottom: 22px;">
+                                <p class="holding-white-sub-p">
                                     Its portfolio also extends into theme parks and resorts, developing eco-friendly leisure destinations that integrate entertainment, tourism, and long-term real-asset value; media and film, financing content and entertainment.
                                 </p>
+                            </div>
 
-                                <!-- Strategic Sectors Grid -->
-                                <div style="margin-top: 25px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 22px;">
-                                    <span style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #94a3b8; margin-bottom: 14px;">
-                                        Core Investment Verticals &amp; Focus Sectors
-                                    </span>
-                                    <div class="d-flex flex-wrap gap-2">
-                                        <span class="holding-sector-pill"><i class="fa-solid fa-chart-line"></i> Private Equity &amp; Venture Capital</span>
-                                        <span class="holding-sector-pill"><i class="fa-solid fa-microchip"></i> Enterprise IT, AI &amp; Innovation</span>
-                                        <span class="holding-sector-pill"><i class="fa-solid fa-dna"></i> Healthcare &amp; Biotechnology</span>
-                                        <span class="holding-sector-pill"><i class="fa-solid fa-seedling"></i> Agriculture &amp; Logistics</span>
-                                        <span class="holding-sector-pill"><i class="fa-solid fa-charging-station"></i> Electric Vehicles (EV)</span>
-                                        <span class="holding-sector-pill"><i class="fa-solid fa-city"></i> Real Estate &amp; Construction</span>
-                                        <span class="holding-sector-pill"><i class="fa-solid fa-coins"></i> Financial Technology (FinTech)</span>
-                                        <span class="holding-sector-pill"><i class="fa-solid fa-umbrella-beach"></i> Eco-Friendly Theme Parks &amp; Resorts</span>
-                                        <span class="holding-sector-pill"><i class="fa-solid fa-film"></i> Media, Film &amp; Entertainment</span>
+                            <div class="holding-white-stats">
+                                <div class="holding-white-stat-box">
+                                    <div class="holding-white-stat-val">
+                                        <i class="bi bi-globe-americas"></i> 5
                                     </div>
+                                    <div class="holding-white-stat-title">Global Markets</div>
+                                    <div class="holding-white-stat-sub">Africa, USA, UAE, Qatar &amp; United Kingdom</div>
                                 </div>
-
-                                <!-- Acceleration Capabilities -->
-                                <div class="holding-capabilities">
-                                    <div class="holding-cap-box">
-                                        <i class="fa-solid fa-brain"></i>
-                                        <span>AI &amp; Innovation Labs</span>
+                                <div class="holding-white-stat-box">
+                                    <div class="holding-white-stat-val">
+                                        <i class="bi bi-pie-chart-fill"></i> 9+
                                     </div>
-                                    <div class="holding-cap-box">
-                                        <i class="fa-solid fa-rocket"></i>
-                                        <span>Funding Accelerators</span>
-                                    </div>
-                                    <div class="holding-cap-box">
-                                        <i class="fa-solid fa-flask"></i>
-                                        <span>Applied R&amp;D Hubs</span>
-                                    </div>
-                                    <div class="holding-cap-box">
-                                        <i class="fa-solid fa-cubes-stacked"></i>
-                                        <span>Durable Tech Platforms</span>
-                                    </div>
+                                    <div class="holding-white-stat-title">Focus Verticals</div>
+                                    <div class="holding-white-stat-sub">PE/VC, AI, HealthTech, EV, FinTech, Real Estate</div>
                                 </div>
+                                <div class="holding-white-stat-box">
+                                    <div class="holding-white-stat-val">
+                                        <i class="bi bi-cpu-fill"></i> 4
+                                    </div>
+                                    <div class="holding-white-stat-title">Growth Engines</div>
+                                    <div class="holding-white-stat-sub">AI Labs, Accelerators, R&amp;D Hubs, Platforms</div>
+                                </div>
+                                <div class="holding-white-stat-box">
+                                    <div class="holding-white-stat-val">
+                                        <i class="bi bi-shield-check"></i> CoR 30.1
+                                    </div>
+                                    <div class="holding-white-stat-title">CIPC Governance</div>
+                                    <div class="holding-white-stat-sub">Verified Statutory Enterprise Compliance</div>
+                                </div>
+                            </div>
+                        </div>
 
-                                <!-- Jurisdictions -->
-                                <div class="holding-jurisdictions">
-                                    <div class="d-flex align-items-center gap-2">
-                                        <i class="fa-solid fa-globe" style="color: var(--brand-red, #E51A24); font-size: 16px;"></i>
-                                        <span style="font-size: 13.5px; font-weight: 600; color: #e2e8f0;">International Operating Footprint:</span>
+                        <!-- 4 Acceleration Capabilities -->
+                        <div class="holding-white-divider">
+                            <h4 class="holding-white-divider-title">
+                                <i class="bi bi-lightning-charge-fill"></i> Operational Advantage &amp; Acceleration Platforms
+                            </h4>
+                            <span class="holding-white-divider-sub">Transforming Applied Innovation into Measurable Advantage</span>
+                        </div>
+                        <div class="holding-white-engines-grid">
+                            <div class="holding-white-engine-card">
+                                <div class="holding-white-engine-icon">
+                                    <i class="bi bi-robot"></i>
+                                </div>
+                                <div class="holding-white-engine-title">AI &amp; Innovation Labs</div>
+                                <p class="holding-white-engine-desc">
+                                    Deploying advanced artificial intelligence, neural automation, and cognitive enterprise architectures.
+                                </p>
+                            </div>
+                            <div class="holding-white-engine-card">
+                                <div class="holding-white-engine-icon">
+                                    <i class="bi bi-rocket-takeoff"></i>
+                                </div>
+                                <div class="holding-white-engine-title">Funding Accelerators</div>
+                                <p class="holding-white-engine-desc">
+                                    Syndicated liquidity structuring, venture capitalization, and rapid cross-border scale-up resources.
+                                </p>
+                            </div>
+                            <div class="holding-white-engine-card">
+                                <div class="holding-white-engine-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M2.5 1a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H12v2.586a2 2 0 0 0 .586 1.414l2.293 2.293A3.5 3.5 0 0 1 16 10.293V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-3.707a3.5 3.5 0 0 1 1.121-2.507l2.293-2.293A2 2 0 0 0 4 4.086V1.5H3a.5.5 0 0 1-.5-.5zm1.5.5v2.586a3 3 0 0 1-.879 2.121L1.828 7.5A2.5 2.5 0 0 0 1 9.293V14a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-4.707a2.5 2.5 0 0 0-.828-1.793l-2.293-2.293A3 3 0 0 1 11 4.086V1.5H4z"/>
+                                        <path d="M5.5 10.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5zm1 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H7a.5.5 0 0 1-.5-.5z"/>
+                                    </svg>
+                                </div>
+                                <div class="holding-white-engine-title">Applied R&amp;D Hubs</div>
+                                <p class="holding-white-engine-desc">
+                                    Translational commercial research, specialized engineering breakthroughs, and deep-tech incubation.
+                                </p>
+                            </div>
+                            <div class="holding-white-engine-card">
+                                <div class="holding-white-engine-icon">
+                                    <i class="bi bi-stack"></i>
+                                </div>
+                                <div class="holding-white-engine-title">Durable Tech Platforms</div>
+                                <p class="holding-white-engine-desc">
+                                    Resilient, multi-jurisdiction cloud software and scalable digital infrastructure engineered for longevity.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Core Investment Verticals & Focus Sectors -->
+                        <div class="holding-white-divider">
+                            <h4 class="holding-white-divider-title">
+                                <i class="bi bi-grid-3x3-gap-fill"></i> Core Investment Verticals &amp; Focus Sectors
+                            </h4>
+                            <span class="holding-white-divider-sub">Multi-Sector Diversified Portfolio</span>
+                        </div>
+                        <div class="holding-white-verticals-grid">
+                            <div class="holding-white-vertical-card">
+                                <div class="holding-white-vertical-icon">
+                                    <i class="bi bi-graph-up-arrow"></i>
+                                </div>
+                                <div class="holding-white-vertical-info">
+                                    <div class="holding-white-vertical-name">Private Equity &amp; Venture Capital</div>
+                                    <span class="holding-white-vertical-sub">Growth equity, buyouts &amp; venture scaling</span>
+                                </div>
+                            </div>
+                            <div class="holding-white-vertical-card">
+                                <div class="holding-white-vertical-icon">
+                                    <i class="bi bi-cpu"></i>
+                                </div>
+                                <div class="holding-white-vertical-info">
+                                    <div class="holding-white-vertical-name">Enterprise IT, AI &amp; Innovation</div>
+                                    <span class="holding-white-vertical-sub">Applied AI, cloud architecture &amp; cyber systems</span>
+                                </div>
+                            </div>
+                            <div class="holding-white-vertical-card">
+                                <div class="holding-white-vertical-icon">
+                                    <i class="bi bi-heart-pulse"></i>
+                                </div>
+                                <div class="holding-white-vertical-info">
+                                    <div class="holding-white-vertical-name">Healthcare &amp; Biotechnology</div>
+                                    <span class="holding-white-vertical-sub">Clinical innovations, therapeutics &amp; life sciences</span>
+                                </div>
+                            </div>
+                            <div class="holding-white-vertical-card">
+                                <div class="holding-white-vertical-icon">
+                                    <i class="bi bi-flower1"></i>
+                                </div>
+                                <div class="holding-white-vertical-info">
+                                    <div class="holding-white-vertical-name">Agriculture &amp; Logistics</div>
+                                    <span class="holding-white-vertical-sub">Agri-tech, cold-chain &amp; global supply logistics</span>
+                                </div>
+                            </div>
+                            <div class="holding-white-vertical-card">
+                                <div class="holding-white-vertical-icon">
+                                    <i class="bi bi-ev-front"></i>
+                                </div>
+                                <div class="holding-white-vertical-info">
+                                    <div class="holding-white-vertical-name">Electric Vehicles (EV)</div>
+                                    <span class="holding-white-vertical-sub">Clean mobility, battery ecosystems &amp; fleets</span>
+                                </div>
+                            </div>
+                            <div class="holding-white-vertical-card">
+                                <div class="holding-white-vertical-icon">
+                                    <i class="bi bi-buildings"></i>
+                                </div>
+                                <div class="holding-white-vertical-info">
+                                    <div class="holding-white-vertical-name">Real Estate &amp; Construction</div>
+                                    <span class="holding-white-vertical-sub">Prime commercial, residential &amp; infrastructure</span>
+                                </div>
+                            </div>
+                            <div class="holding-white-vertical-card">
+                                <div class="holding-white-vertical-icon">
+                                    <i class="bi bi-wallet2"></i>
+                                </div>
+                                <div class="holding-white-vertical-info">
+                                    <div class="holding-white-vertical-name">Financial Technology (FinTech)</div>
+                                    <span class="holding-white-vertical-sub">Cross-border liquidity, banking &amp; digital payments</span>
+                                </div>
+                            </div>
+                            <div class="holding-white-vertical-card">
+                                <div class="holding-white-vertical-icon">
+                                    <i class="bi bi-tree"></i>
+                                </div>
+                                <div class="holding-white-vertical-info">
+                                    <div class="holding-white-vertical-name">Eco-Friendly Theme Parks &amp; Resorts</div>
+                                    <span class="holding-white-vertical-sub">Experiential destinations &amp; sustainable leisure</span>
+                                </div>
+                            </div>
+                            <div class="holding-white-vertical-card">
+                                <div class="holding-white-vertical-icon">
+                                    <i class="bi bi-camera-reels"></i>
+                                </div>
+                                <div class="holding-white-vertical-info">
+                                    <div class="holding-white-vertical-name">Media, Film &amp; Entertainment</div>
+                                    <span class="holding-white-vertical-sub">Creative IP financing, studio production &amp; streaming</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- International Operating Footprint -->
+                        <div class="holding-white-footprint">
+                            <div class="holding-white-footprint-head">
+                                <div class="holding-white-footprint-label">
+                                    <i class="bi bi-globe2"></i> International Operating Footprint
+                                </div>
+                                <div class="holding-white-footprint-note">
+                                    Cross-border execution desks &bull; Global regulatory compliance
+                                </div>
+                            </div>
+                            <div class="holding-white-footprint-grid">
+                                <div class="holding-white-region-pill">
+                                    <div class="holding-white-region-top">
+                                        <span>🌍 Africa</span>
                                     </div>
-                                    <div class="d-flex flex-wrap gap-2 align-items-center">
-                                        <span style="background: rgba(255, 255, 255, 0.08); padding: 5px 12px; border-radius: 6px; font-size: 12.5px; font-weight: 600; color: #f8fafc;">🌍 Africa</span>
-                                        <span style="background: rgba(255, 255, 255, 0.08); padding: 5px 12px; border-radius: 6px; font-size: 12.5px; font-weight: 600; color: #f8fafc;">🇺🇸 United States</span>
-                                        <span style="background: rgba(255, 255, 255, 0.08); padding: 5px 12px; border-radius: 6px; font-size: 12.5px; font-weight: 600; color: #f8fafc;">🇦🇪 United Arab Emirates</span>
-                                        <span style="background: rgba(255, 255, 255, 0.08); padding: 5px 12px; border-radius: 6px; font-size: 12.5px; font-weight: 600; color: #f8fafc;">🇶🇦 Qatar</span>
-                                        <span style="background: rgba(255, 255, 255, 0.08); padding: 5px 12px; border-radius: 6px; font-size: 12.5px; font-weight: 600; color: #f8fafc;">🇬🇧 United Kingdom</span>
+                                    <div class="holding-white-region-desc">Continental headquarters &amp; growth hubs</div>
+                                </div>
+                                <div class="holding-white-region-pill">
+                                    <div class="holding-white-region-top">
+                                        <span>🇺🇸 United States</span>
                                     </div>
+                                    <div class="holding-white-region-desc">Capital markets, tech &amp; venture corridors</div>
+                                </div>
+                                <div class="holding-white-region-pill">
+                                    <div class="holding-white-region-top">
+                                        <span>🇦🇪 United Arab Emirates</span>
+                                    </div>
+                                    <div class="holding-white-region-desc">MENA strategic desk &amp; international trade</div>
+                                </div>
+                                <div class="holding-white-region-pill">
+                                    <div class="holding-white-region-top">
+                                        <span>🇶🇦 Qatar</span>
+                                    </div>
+                                    <div class="holding-white-region-desc">Gulf investment &amp; sovereign linkages</div>
+                                </div>
+                                <div class="holding-white-region-pill">
+                                    <div class="holding-white-region-top">
+                                        <span>🇬🇧 United Kingdom</span>
+                                    </div>
+                                    <div class="holding-white-region-desc">European governance &amp; institutional liaison</div>
                                 </div>
                             </div>
                         </div>
@@ -2519,22 +3054,22 @@
                     <div class="title-style-one center mb--40 text-center">
                         <span class="pre" style="color: var(--brand-red, #E51A24); font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin: 0 auto 12px auto; display: inline-flex; justify-content: center;">Portfolio Governance</span>
                         <h2 class="title rts-text-anime-style-1" style="font-weight: 700; font-size: 32px; margin-top: 6px; margin-bottom: 14px;">Our Operating Portfolio &amp; Subsidiaries</h2>
-                        <p class="disc" style="max-width: 840px; margin: 0 auto; font-size: 15.5px; line-height: 1.65; color: #5D666F;">
-                            Operating under the strategic governance and institutional capital stewardship of Aroseglinks Zillionaire Group Heirs Holdings, our dedicated specialized subsidiaries deliver focused execution across strategic advisory, executive leadership, international education, and human capital development.
+                        <p class="disc" style="max-width: 880px; margin: 0 auto; font-size: 15.5px; line-height: 1.65; color: #5D666F;">
+                            Operating under the strategic governance and institutional capital stewardship of <strong>Aroseglinks Zillionaire Group Heirs Holdings Trust</strong> and <strong>Aroseglinks Zillionaire Group Heirs Holdings</strong>, our dedicated operating entities—including <strong>Aroseglinks Zillionaire Consulting (Pty) Ltd</strong>—deliver focused execution across strategic advisory, executive leadership, international education, and human capital development.
                         </p>
                     </div>
                 </div>
             </div>
             <div class="row g-4 justify-content-center">
-                <!-- Subsidiary 1: Aroseg Zillionaire -->
+                <!-- Subsidiary 1: Aroseglinks Zillionaire Consulting (Pty) Ltd -->
                 <div class="col-lg-3 col-md-6 col-12">
                     <div class="subsidiary-card">
                         <div class="logo-wrapper">
-                            <img src="assets/images/subsidiaries/logo-aroseg-zillionaire.webp" alt="Aroseg Zillionaire" style="max-height: 90px; max-width: 85%; object-fit: contain;">
+                            <img src="assets/images/subsidiaries/logo-aroseg-zillionaire.webp" alt="Aroseglinks Zillionaire Consulting (Pty) Ltd" style="max-height: 90px; max-width: 85%; object-fit: contain;">
                         </div>
                         <div class="subsidiary-info">
-                            <h5>Aroseg Zillionaire</h5>
-                            <span>Strategic Consulting &amp; AI Advisory</span>
+                            <h5>Aroseglinks Zillionaire Consulting (Pty) Ltd</h5>
+                            <span>Strategic AI Advisory &amp; Enterprise Execution</span>
                         </div>
                     </div>
                 </div>
@@ -2578,6 +3113,101 @@
         </div>
     </section>
     <!-- our subsidiaries section end -->
+
+    <!-- our team area start -->
+    <section class="rts-team-area rts-section-gap" style="background: #ffffff; border-bottom: 1px solid #eef2f6;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="title-style-one center mb--50 text-center">
+                        <span class="pre" style="color: var(--brand-red, #E51A24); font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin: 0 auto 12px auto; display: inline-flex; justify-content: center;">Expert Leadership &amp; Talent</span>
+                        <h2 class="title rts-text-anime-style-1" style="font-weight: 700; font-size: 32px; margin-top: 6px; margin-bottom: 14px;">Meet Our Dedicated Team</h2>
+                        <p class="disc" style="max-width: 680px; margin: 0 auto; font-size: 15.5px; line-height: 1.65; color: #5D666F;">
+                            Our seasoned executives and education consultants deliver institutional guidance, transparent advisory, and dynamic digital engagement across every client journey.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- Team Member 1: Aroba Sarah Opeyemi -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="team-white-card">
+                        <div class="team-white-thumb">
+                            <img src="assets/images/team/sarah-aroba.webp" alt="Aroba Sarah Opeyemi - Office Administrative Manager">
+                            <span class="team-white-badge">
+                                <i class="bi bi-briefcase-fill"></i> Operations &amp; Admin
+                            </span>
+                        </div>
+                        <div class="team-white-info">
+                            <div>
+                                <h4 class="team-white-name">Aroba Sarah Opeyemi</h4>
+                                <span class="team-white-role">Office Administrative Manager</span>
+                                <p class="team-white-desc">
+                                    Overseeing headquarters operations, corporate administration, client liaison, institutional documentation, and organizational workflow efficiency.
+                                </p>
+                            </div>
+                            <div class="team-white-social">
+                                <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                <a href="mailto:info@aroseglink.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+                                <a href="contact.html" aria-label="Contact"><i class="bi bi-telephone-fill"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 2: Francis Daniel -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="team-white-card">
+                        <div class="team-white-thumb">
+                            <img src="assets/images/team/francis-daniel.webp" alt="Francis Daniel - Educational Consultant">
+                            <span class="team-white-badge">
+                                <i class="bi bi-mortarboard-fill"></i> Global Admissions
+                            </span>
+                        </div>
+                        <div class="team-white-info">
+                            <div>
+                                <h4 class="team-white-name">Francis Daniel</h4>
+                                <span class="team-white-role">Daniel Francis - Educational Consultant</span>
+                                <p class="team-white-desc">
+                                    Specialist in international student recruitment, university profiling, admissions compliance, and scholar pathway advisory across UK, Canada, and US destinations.
+                                </p>
+                            </div>
+                            <div class="team-white-social">
+                                <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                <a href="mailto:info@aroseglink.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+                                <a href="study-abroad.html" aria-label="Consult"><i class="bi bi-chat-dots-fill"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 3: Kenneth Olajidé BELLO -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="team-white-card">
+                        <div class="team-white-thumb">
+                            <img src="assets/images/team/kenneth-bello.webp" alt="Kenneth Olajidé BELLO - Social Media Manager">
+                            <span class="team-white-badge">
+                                <i class="bi bi-megaphone-fill"></i> Brand &amp; Digital
+                            </span>
+                        </div>
+                        <div class="team-white-info">
+                            <div>
+                                <h4 class="team-white-name">Kenneth Olajidé BELLO</h4>
+                                <span class="team-white-role">Social Media Manager</span>
+                                <p class="team-white-desc">
+                                    Directing multi-channel digital communications, creative content strategy, audience engagement, and community building across global platforms.
+                                </p>
+                            </div>
+                            <div class="team-white-social">
+                                <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                <a href="mailto:info@aroseglink.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+                                <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- our team area end -->
 
     <!-- rts blog area start -->
     <div class="rts-blog-area pt--40 pb--50">
