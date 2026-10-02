@@ -1328,9 +1328,375 @@ body, html {
   border-color: var(--brand-red, #E51A24);
 }
 
+/* ==========================================================================
+   Education Agent Guide - Official British Council & Study UK Showcase
+   ========================================================================== */
 
+.education-agent-guide-area {
+  padding-top: 30px;
+  padding-bottom: 90px;
+  position: relative;
+}
 
+.guide-banner-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 45px -15px rgba(15, 23, 42, 0.08);
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+}
 
+.guide-banner-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #E51A24 0%, #111111 60%, #E51A24 100%);
+}
 
+.guide-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(229, 26, 36, 0.08);
+  border: 1px solid rgba(229, 26, 36, 0.2);
+  border-radius: 30px;
+  color: var(--brand-red, #E51A24);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 20px;
+}
 
+.guide-badge-pill .badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brand-red, #E51A24);
+  box-shadow: 0 0 8px rgba(229, 26, 36, 0.7);
+  display: inline-block;
+}
 
+.guide-card-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #111111;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.guide-card-lead {
+  font-size: 15.5px;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 26px;
+}
+
+.guide-checklist-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.guide-checklist-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 13px 16px;
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid #edf2f7;
+  transition: all 0.2s ease;
+}
+
+.guide-checklist-item:hover {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.guide-checklist-item i {
+  color: var(--brand-red, #E51A24);
+  font-size: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.guide-checklist-item strong {
+  display: block;
+  font-size: 14.5px;
+  color: #0f172a;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+
+.guide-checklist-item p {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.guide-action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding-top: 10px;
+}
+
+.guide-btn-main {
+  background: var(--brand-red, #E51A24) !important;
+  color: #ffffff !important;
+  border: 2px solid var(--brand-red, #E51A24) !important;
+  padding: 12px 22px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  text-decoration: none !important;
+  transition: all 0.25s ease !important;
+}
+
+.guide-btn-main:hover {
+  background: #111111 !important;
+  border-color: #111111 !important;
+  transform: translateY(-2px);
+}
+
+.guide-btn-secondary {
+  background: #0f172a !important;
+  color: #ffffff !important;
+  border: 2px solid #0f172a !important;
+  padding: 12px 22px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  text-decoration: none !important;
+  transition: all 0.25s ease !important;
+}
+
+.guide-btn-secondary:hover {
+  background: var(--brand-red, #E51A24) !important;
+  border-color: var(--brand-red, #E51A24) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+.guide-verify-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #475569;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.guide-verify-link:hover {
+  color: var(--brand-red, #E51A24);
+  background: rgba(229, 26, 36, 0.05);
+}
+
+/* PDF Embed Frame */
+.guide-embed-frame-wrapper {
+  background: #0f172a;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+  border: 1px solid #1e293b;
+  display: flex;
+  flex-direction: column;
+}
+
+.guide-embed-header {
+  background: #1e293b;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #334155;
+}
+
+.guide-embed-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.guide-embed-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.guide-embed-dot.red { background: #ef4444; }
+.guide-embed-dot.yellow { background: #f59e0b; }
+.guide-embed-dot.green { background: #10b981; }
+
+.guide-embed-docname {
+  color: #e2e8f0;
+  font-size: 12.5px;
+  font-family: monospace;
+  margin-left: 6px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.guide-embed-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.badge-pages {
+  background: rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.guide-popout-btn {
+  color: #94a3b8;
+  font-size: 13px;
+  transition: color 0.2s;
+  padding: 2px 4px;
+}
+
+.guide-popout-btn:hover {
+  color: #ffffff;
+}
+
+.guide-embed-body {
+  position: relative;
+  background: #1e293b;
+  min-height: 520px;
+  display: flex;
+  align-items: stretch;
+}
+
+.guide-pdf-iframe {
+  width: 100%;
+  height: 540px;
+  border: none;
+  background: #ffffff;
+  display: block;
+}
+
+.guide-embed-mobile-fallback {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  text-align: center;
+  background: #ffffff;
+  width: 100%;
+}
+
+.guide-cover-img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+  border: 1px solid #e2e8f0;
+}
+
+.guide-embed-mobile-fallback p {
+  color: #475569;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.guide-embed-footer {
+  background: #0f172a;
+  padding: 11px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #1e293b;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.guide-embed-footer a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.guide-embed-footer a:hover {
+  color: #7dd3fc;
+  text-decoration: underline;
+}
+
+/* Responsive queries */
+@media (max-width: 991px) {
+  .guide-banner-card {
+    padding: 32px 24px;
+  }
+  .guide-card-title {
+    font-size: 26px;
+  }
+  .guide-embed-body {
+    min-height: 440px;
+  }
+  .guide-pdf-iframe {
+    height: 440px;
+  }
+}
+
+@media (max-width: 767px) {
+  .guide-banner-card {
+    padding: 24px 18px;
+    border-radius: 14px;
+  }
+  .guide-card-title {
+    font-size: 22px;
+  }
+  .guide-pdf-iframe {
+    display: none;
+  }
+  .guide-embed-mobile-fallback {
+    display: flex;
+  }
+  .guide-action-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .guide-action-buttons a {
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+  }
+  .guide-embed-footer {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+}
