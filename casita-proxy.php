@@ -159,8 +159,15 @@ foreach ($buildings as $b) {
     }
 
     $endUrl = $b['end_url'] ?? $b['relative_url'] ?? '';
-    if (!empty($endUrl) && strpos($endUrl, 'http') !== 0) {
-        $endUrl = 'https://www.casita.com' . $endUrl;
+    if (!empty($endUrl)) {
+        if (strpos($endUrl, 'http') !== 0) {
+            $endUrl = 'https://www.casita.com' . $endUrl;
+        }
+        if (strpos($endUrl, 'utm_source=') === false) {
+            $endUrl .= (strpos($endUrl, '?') !== false ? '&' : '?') . 'utm_source=aro-7354';
+        } else {
+            $endUrl = preg_replace('/([?&])utm_source=[^&]*/', '$1utm_source=aro-7354', $endUrl);
+        }
     }
 
     $price = $b['min_price'] ?? null;
