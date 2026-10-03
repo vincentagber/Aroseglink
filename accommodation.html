@@ -115,208 +115,1250 @@
     </div>
 
 
-    
-    <!-- accommodation hero area start -->
-    <div class="rts-accommodation-hero bg_image ptb--100" style="background-image: url('assets/images/banner/04.jpg'); background-size: cover; background-position: center; position: relative;">
-        <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6);"></div>
-        <div class="container" style="position: relative; z-index: 2;">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <span class="pre-title" style="color: #F5A623; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Find Your Perfect Student Home</span>
-                    <h1 class="title" style="color: #fff; font-size: 56px; font-weight: 700; margin-bottom: 20px;">Global Student Accommodation</h1>
-                    <p style="color: #ddd; max-width: 600px; margin: 0 auto 40px; font-size: 18px;">
-                        Search and book from hundreds of thousands of student rooms across the UK, USA, Australia, Canada, and Europe natively on our platform.
-                    </p>
-                </div>
-            </div>
-            
-            <!-- Search Box -->
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="accommodation-search-box" style="background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.15);">
-                        <form id="casita-search-form">
-                            <div class="row align-items-end">
-                                <div class="col-md-4 mb-3 mb-md-0">
-                                    <label style="font-weight: 600; margin-bottom: 8px; display: block; color: #333;">Destination Country</label>
-                                    <select id="casita-country" class="form-control" required style="width:100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 6px; height: 55px; background: #fdfdfd; font-size: 16px;">
-                                        <option value="">Loading countries...</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-5 mb-3 mb-md-0">
-                                    <label style="font-weight: 600; margin-bottom: 8px; display: block; color: #333;">Destination City</label>
-                                    <select id="casita-city" class="form-control" required disabled style="width:100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 6px; height: 55px; background: #fdfdfd; font-size: 16px;">
-                                        <option value="">Select a country first</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3">
-                                    <button type="submit" id="casita-search-btn" class="rts-btn btn-primary" style="height: 55px; width: 100%; border-radius: 6px; font-weight: 600; font-size: 16px; background: #E51A24; border: none;" disabled>
-                                        Search Rooms <i class="fa-solid fa-search" style="margin-left: 8px;"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- accommodation hero area end -->
+       <!-- ==========================================================================
+         STUDENT ACCOMMODATION LANDING PAGE — REDESIGNED COMPONENT SYSTEM
+         Aroseglink Services Limited x Casita Global Housing Partnership
+         ========================================================================== -->
 
-    <!-- results area start -->
-    <div class="rts-accommodation-results rts-section-gap bg-light">
-        <div class="container">
-            <div class="row mb--40">
-                <div class="col-12 text-center">
-                    <h3 id="results-title" style="display: none; font-weight: 700; color: #333;">Available Accommodations</h3>
-                    <div id="results-loader" style="display: none;">
-                        <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 40px; color: #E51A24; margin-bottom: 15px;"></i>
-                        <p style="font-weight: 500; color: #666;">Searching global database...</p>
-                    </div>
-                    <div id="casita-error" class="alert alert-warning" style="display: none; max-width: 600px; margin: 0 auto; text-align: left;"></div>
-                </div>
-            </div>
-            
-            <div class="row" id="accommodations-grid">
-                <!-- JS will inject building cards here -->
-                <div class="col-12 text-center" id="empty-state">
-                    <img src="assets/images/icons/search-house.svg" alt="Search" style="max-width: 150px; opacity: 0.2; margin-bottom: 20px;">
-                    <p style="color: #999; font-size: 18px;">Please select a country and city to view available student rooms.</p>
-                </div>
-            </div>
-            
-            <div class="row mt--40 text-center" id="direct-link-fallback" style="display: none;">
-                <div class="col-12">
-                    <p style="color: #555; margin-bottom: 15px;">Want to browse all global properties directly?</p>
-                    <a href="https://www.casita.com/?utm_source=aro-7354" target="_blank" class="rts-btn btn-secondary" style="border-radius: 6px; background: #333; color: #fff;">
-                        Open Full Casita Portal <i class="fa-solid fa-external-link-alt" style="margin-left: 8px;"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- results area end -->
-
-    <!-- API Integration Script -->
+    <!-- API & Design System Styles -->
     <style>
-        .accommodation-search-box {
-            background: #ffffff;
-            padding: 35px 30px;
-            border-radius: 16px;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+        /* ----------------------------------------------------------------------
+           Design Tokens: Color Palette, Typography & Spacing Scale
+           ---------------------------------------------------------------------- */
+        :root {
+            --al-brand: #E51A24;
+            --al-brand-hover: #c9141d;
+            --al-brand-subtle: #fef2f2;
+            --al-brand-border: #fecaca;
+            
+            --al-navy-950: #090d16;
+            --al-navy-900: #0f172a;
+            --al-navy-850: #131b2c;
+            --al-navy-800: #1e293b;
+            
+            --al-slate-900: #0f172a;
+            --al-slate-800: #1e293b;
+            --al-slate-700: #334155;
+            --al-slate-600: #475569;
+            --al-slate-500: #64748b;
+            --al-slate-400: #94a3b8;
+            --al-slate-300: #cbd5e1;
+            --al-slate-200: #e2e8f0;
+            --al-slate-100: #f1f5f9;
+            --al-slate-50:  #f8fafc;
+            --al-white:     #ffffff;
+            
+            --al-success:   #15803d;
+            --al-success-bg: #f0fdf4;
+            --al-success-border: #bbf7d0;
+
+            --al-radius-sm: 6px;
+            --al-radius-md: 10px;
+            --al-radius-lg: 14px;
+            --al-radius-xl: 18px;
+            --al-radius-full: 9999px;
+
+            --al-shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+            --al-shadow-hover: 0 20px 40px -4px rgba(15, 23, 42, 0.09), 0 8px 16px -2px rgba(15, 23, 42, 0.04);
+            --al-transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* ----------------------------------------------------------------------
+           Component: Buttons & Interactive Controls
+           ---------------------------------------------------------------------- */
+        .al-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14.5px;
+            font-weight: 600;
+            padding: 13px 26px;
+            border-radius: var(--al-radius-md);
+            border: 1px solid transparent;
+            text-decoration: none;
+            transition: var(--al-transition);
+            cursor: pointer;
+            line-height: 1.25;
+            white-space: nowrap;
+        }
+        .al-btn-primary {
+            background-color: var(--al-brand);
+            color: var(--al-white) !important;
+            box-shadow: 0 4px 14px rgba(229, 26, 36, 0.28);
+        }
+        .al-btn-primary:hover {
+            background-color: var(--al-brand-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(229, 26, 36, 0.35);
+        }
+        .al-btn-secondary {
+            background-color: var(--al-white);
+            color: var(--al-slate-700) !important;
+            border-color: var(--al-slate-300);
+        }
+        .al-btn-secondary:hover {
+            background-color: var(--al-slate-50);
+            color: var(--al-slate-900) !important;
+            border-color: var(--al-slate-400);
+            transform: translateY(-2px);
+        }
+        .al-btn-whatsapp {
+            background-color: var(--al-success-bg);
+            color: var(--al-success) !important;
+            border-color: var(--al-success-border);
+        }
+        .al-btn-whatsapp:hover {
+            background-color: #22c55e;
+            color: var(--al-white) !important;
+            border-color: #22c55e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(34, 197, 94, 0.25);
+        }
+
+        /* ----------------------------------------------------------------------
+           Section 1: Lead Hero & Toronto Regional Focus
+           ---------------------------------------------------------------------- */
+        .al-hero-section {
+            background: linear-gradient(180deg, var(--al-navy-950) 0%, var(--al-navy-900) 100%);
+            padding: 90px 0 110px;
+            position: relative;
+            overflow: hidden;
+        }
+        .al-hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 80% 20%, rgba(229, 26, 36, 0.12) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .al-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 6px 16px;
+            border-radius: var(--al-radius-full);
+            color: var(--al-slate-300);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+        }
+        .al-hero-badge .al-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: var(--al-brand);
+        }
+        .al-hero-title {
+            color: var(--al-white);
+            font-size: 46px;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+            max-width: 820px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .al-hero-lead {
+            color: var(--al-slate-400);
+            font-size: 17.5px;
+            line-height: 1.65;
+            max-width: 680px;
+            margin: 0 auto 36px;
+        }
+
+        /* Toronto Spotlight Box */
+        .al-spotlight-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--al-radius-lg);
+            padding: 20px 28px;
+            max-width: 840px;
+            margin: 0 auto 40px;
+            text-align: left;
+            backdrop-filter: blur(10px);
+        }
+        .al-spotlight-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+        .al-spotlight-tag {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--al-white);
+            background: rgba(229, 26, 36, 0.2);
+            border: 1px solid rgba(229, 26, 36, 0.4);
+            padding: 4px 10px;
+            border-radius: var(--al-radius-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .al-spotlight-desc {
+            color: var(--al-slate-300);
+            font-size: 14.5px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        /* Search Console Component */
+        .al-search-console {
+            background: var(--al-white);
+            border-radius: var(--al-radius-xl);
+            padding: 30px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+            max-width: 980px;
+            margin: 0 auto;
             position: relative;
             z-index: 10;
         }
-        .building-card {
-            background: #ffffff;
-            border-radius: 14px;
+        .al-form-label {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--al-slate-700);
+            margin-bottom: 8px;
+            display: block;
+        }
+        .al-form-select {
+            width: 100%;
+            height: 52px;
+            padding: 10px 16px;
+            border: 1px solid var(--al-slate-300);
+            border-radius: var(--al-radius-md);
+            background-color: var(--al-slate-50);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--al-slate-900);
+            transition: var(--al-transition);
+        }
+        .al-form-select:focus {
+            background-color: var(--al-white);
+            border-color: var(--al-brand);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(229, 26, 36, 0.12);
+        }
+
+        /* ----------------------------------------------------------------------
+           Section 2: Popular Study Hubs Component
+           ---------------------------------------------------------------------- */
+        .al-hubs-section {
+            background-color: var(--al-slate-50);
+            padding: 85px 0 75px;
+            border-bottom: 1px solid var(--al-slate-200);
+        }
+        .al-section-header {
+            text-align: center;
+            max-width: 660px;
+            margin: 0 auto 48px;
+        }
+        .al-section-overline {
+            font-size: 12.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--al-brand);
+            margin-bottom: 8px;
+            display: block;
+        }
+        .al-section-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--al-slate-900);
+            line-height: 1.25;
+            margin-bottom: 12px;
+        }
+        .al-section-subtitle {
+            font-size: 15.5px;
+            color: var(--al-slate-600);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* Hub Card Component */
+        .al-hub-card {
+            background: var(--al-white);
+            border: 1px solid var(--al-slate-200);
+            border-radius: var(--al-radius-lg);
+            padding: 24px;
+            box-shadow: var(--al-shadow-card);
+            transition: var(--al-transition);
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            position: relative;
+        }
+        .al-hub-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--al-slate-300);
+            box-shadow: var(--al-shadow-hover);
+        }
+        .al-hub-card.al-hub-featured {
+            border-color: var(--al-brand-border);
+            background: linear-gradient(180deg, #fff 0%, #fffcfc 100%);
+        }
+        .al-hub-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+        .al-country-badge {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.6px;
+            color: var(--al-slate-700);
+            background: var(--al-slate-100);
+            padding: 3px 8px;
+            border-radius: var(--al-radius-sm);
+            border: 1px solid var(--al-slate-200);
+        }
+        .al-hub-rooms {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--al-success);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .al-hub-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--al-slate-900);
+            margin-bottom: 4px;
+        }
+        .al-hub-country {
+            font-size: 13.5px;
+            color: var(--al-slate-500);
+            margin-bottom: 16px;
+        }
+        .al-hub-footer {
+            margin-top: auto;
+            padding-top: 14px;
+            border-top: 1px solid var(--al-slate-100);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .al-hub-price {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--al-slate-800);
+        }
+        .al-hub-action {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--al-brand);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* ----------------------------------------------------------------------
+           Section 3: Live Inventory Results & Dynamic Controls Bar
+           ---------------------------------------------------------------------- */
+        .al-results-section {
+            background-color: var(--al-white);
+            padding: 85px 0;
+            min-height: 500px;
+        }
+        .al-controls-bar {
+            background: var(--al-slate-50);
+            border: 1px solid var(--al-slate-200);
+            border-radius: var(--al-radius-lg);
+            padding: 24px 28px;
+            margin-bottom: 40px;
+        }
+        .al-live-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--al-success);
+            background: var(--al-success-bg);
+            border: 1px solid var(--al-success-border);
+            padding: 3px 10px;
+            border-radius: var(--al-radius-full);
+        }
+        .al-live-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: var(--al-success);
+            box-shadow: 0 0 0 0 rgba(21, 128, 61, 0.7);
+            animation: al-pulse 2s infinite;
+        }
+        @keyframes al-pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(21, 128, 61, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(21, 128, 61, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(21, 128, 61, 0); }
+        }
+        .al-count-badge {
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--al-slate-600);
+            background: var(--al-white);
+            border: 1px solid var(--al-slate-200);
+            padding: 3px 10px;
+            border-radius: var(--al-radius-full);
+        }
+        .al-results-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--al-slate-900);
+            margin-top: 4px;
+            margin-bottom: 0;
+        }
+
+        /* Filter & Sort Controls */
+        .al-filter-input-wrap {
+            position: relative;
+            min-width: 250px;
+        }
+        .al-filter-input-wrap i.search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--al-slate-400);
+            font-size: 13.5px;
+            pointer-events: none;
+        }
+        .al-filter-input {
+            width: 100%;
+            height: 44px;
+            padding-left: 38px;
+            padding-right: 32px;
+            border: 1px solid var(--al-slate-300);
+            border-radius: var(--al-radius-md);
+            font-size: 14px;
+            background: var(--al-white);
+            color: var(--al-slate-900);
+            transition: var(--al-transition);
+        }
+        .al-filter-input:focus {
+            border-color: var(--al-brand);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(229, 26, 36, 0.12);
+        }
+        .al-filter-clear {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: transparent;
+            color: var(--al-slate-400);
+            font-size: 18px;
+            cursor: pointer;
+            padding: 0 4px;
+        }
+        .al-filter-clear:hover {
+            color: var(--al-slate-700);
+        }
+        .al-sort-select {
+            height: 44px;
+            padding: 0 14px;
+            border: 1px solid var(--al-slate-300);
+            border-radius: var(--al-radius-md);
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--al-slate-700);
+            background: var(--al-white);
+            cursor: pointer;
+        }
+        .al-sort-select:focus {
+            border-color: var(--al-brand);
+            outline: none;
+        }
+
+        /* Amenity Chips */
+        .al-amenity-chips {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding-top: 14px;
+            margin-top: 14px;
+            border-top: 1px solid var(--al-slate-200);
+        }
+        .al-chip-btn {
+            background: var(--al-white);
+            border: 1px solid var(--al-slate-200);
+            padding: 6px 14px;
+            border-radius: var(--al-radius-full);
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--al-slate-600);
+            cursor: pointer;
+            transition: var(--al-transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .al-chip-btn:hover {
+            background: var(--al-slate-100);
+            color: var(--al-slate-900);
+        }
+        .al-chip-btn.active {
+            background: var(--al-slate-900);
+            border-color: var(--al-slate-900);
+            color: var(--al-white);
+        }
+
+        /* Residence Listing Card */
+        .al-residence-card {
+            background: var(--al-white);
+            border: 1px solid var(--al-slate-200);
+            border-radius: var(--al-radius-lg);
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-            border: 1px solid #edf0f2;
-            transition: all 0.35s ease;
+            box-shadow: var(--al-shadow-card);
+            transition: var(--al-transition);
             display: flex;
             flex-direction: column;
             height: 100%;
         }
-        .building-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
-            border-color: #e2e6ea;
+        .al-residence-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--al-slate-300);
+            box-shadow: var(--al-shadow-hover);
         }
-        .building-card .image-wrapper {
-            height: 240px;
+        .al-residence-media {
+            height: 230px;
             position: relative;
             overflow: hidden;
-            background: #f1f3f5;
+            background: var(--al-slate-900);
         }
-        .building-card .image-wrapper img {
+        .al-residence-media img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
-        .building-card:hover .image-wrapper img {
+        .al-residence-card:hover .al-residence-media img {
             transform: scale(1.05);
         }
-        .building-card .price-tag {
+        .al-badge-verified {
             position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #E51A24;
-            color: #ffffff;
-            padding: 6px 14px;
-            border-radius: 30px;
+            top: 14px;
+            left: 14px;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(8px);
+            color: var(--al-white);
+            font-size: 11.5px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: var(--al-radius-full);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            z-index: 2;
+        }
+        .al-residence-price {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: var(--al-brand);
+            color: var(--al-white);
             font-size: 13px;
             font-weight: 700;
-            box-shadow: 0 4px 15px rgba(229, 26, 36, 0.4);
-            letter-spacing: 0.3px;
+            padding: 5px 12px;
+            border-radius: var(--al-radius-full);
+            box-shadow: 0 4px 12px rgba(229, 26, 36, 0.4);
+            z-index: 2;
         }
-        .building-card .content {
-            padding: 24px;
+        .al-residence-body {
+            padding: 22px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
-        .building-card .title {
-            font-size: 19px;
+        .al-residence-title {
+            font-size: 18px;
             font-weight: 700;
-            color: #1c252e;
-            margin-bottom: 8px;
+            color: var(--al-slate-900);
             line-height: 1.35;
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
-        .building-card .address {
-            color: #6c757d;
+        .al-residence-address {
             font-size: 13.5px;
+            color: var(--al-slate-500);
             margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 6px;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
-        .building-card .distance {
-            font-size: 12.5px;
-            color: #2b8a3e;
-            background: #ebfbee;
-            padding: 4px 10px;
-            border-radius: 6px;
+        .al-residence-distance {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--al-success);
+            background: var(--al-success-bg);
+            border: 1px solid var(--al-success-border);
+            padding: 3px 8px;
+            border-radius: var(--al-radius-sm);
             display: inline-block;
             margin-bottom: 14px;
-            font-weight: 500;
+            align-self: flex-start;
         }
-        .building-card .amenities {
+        .al-residence-amenities {
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
             margin-bottom: 20px;
         }
-        .building-card .amenity-pill {
+        .al-amenity-tag {
             font-size: 11.5px;
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            color: #495057;
-            padding: 3px 9px;
-            border-radius: 20px;
             font-weight: 500;
+            color: var(--al-slate-600);
+            background: var(--al-slate-100);
+            border: 1px solid var(--al-slate-200);
+            padding: 3px 8px;
+            border-radius: var(--al-radius-sm);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
         }
-        .building-card .btn-book {
+        .al-residence-actions {
             margin-top: auto;
-            display: block;
-            text-align: center;
-            background: #E51A24;
-            color: #ffffff;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 14.5px;
-            text-decoration: none;
-            transition: background 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        .building-card .btn-book:hover {
-            background: #c5141d;
-            color: #ffffff;
+        .al-residence-actions .al-btn-book {
+            flex-grow: 1;
+            padding: 11px 16px;
+            font-size: 13.5px;
+        }
+        .al-residence-actions .al-btn-chat {
+            width: 42px;
+            height: 42px;
+            padding: 0;
+            flex-shrink: 0;
+            font-size: 17px;
+        }
+
+        /* Skeleton Shimmer Loaders (Zero CLS) */
+        @keyframes al-shimmer-sweep {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .al-skeleton-shimmer {
+            background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+            background-size: 200% 100%;
+            animation: al-shimmer-sweep 1.5s infinite;
+        }
+        .al-skeleton-card {
+            background: var(--al-white);
+            border: 1px solid var(--al-slate-200);
+            border-radius: var(--al-radius-lg);
+            overflow: hidden;
+            height: 100%;
+        }
+        .al-skeleton-img {
+            height: 230px;
+            width: 100%;
+        }
+        .al-skeleton-body {
+            padding: 22px;
+        }
+
+        /* ----------------------------------------------------------------------
+           Section 4: Value Propositions Component (Trust Pillars)
+           ---------------------------------------------------------------------- */
+        .al-values-section {
+            background-color: var(--al-slate-50);
+            padding: 90px 0;
+            border-top: 1px solid var(--al-slate-200);
+            border-bottom: 1px solid var(--al-slate-200);
+        }
+        .al-feature-card {
+            background: var(--al-white);
+            border: 1px solid var(--al-slate-200);
+            border-radius: var(--al-radius-lg);
+            padding: 32px 26px;
+            box-shadow: var(--al-shadow-card);
+            height: 100%;
+            transition: var(--al-transition);
+            display: flex;
+            flex-direction: column;
+        }
+        .al-feature-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--al-slate-300);
+            box-shadow: var(--al-shadow-hover);
+        }
+        .al-feature-icon-frame {
+            width: 50px;
+            height: 50px;
+            border-radius: var(--al-radius-md);
+            background: var(--al-slate-100);
+            border: 1px solid var(--al-slate-200);
+            color: var(--al-slate-800);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+            transition: var(--al-transition);
+        }
+        .al-feature-card:hover .al-feature-icon-frame {
+            background: var(--al-brand-subtle);
+            border-color: var(--al-brand-border);
+            color: var(--al-brand);
+        }
+        .al-feature-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--al-slate-900);
+            margin-bottom: 10px;
+            line-height: 1.35;
+        }
+        .al-feature-text {
+            font-size: 14px;
+            color: var(--al-slate-600);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+        .al-feature-guarantee {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--al-slate-700);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+
+        /* ----------------------------------------------------------------------
+           Section 6: Global Casita Portal Executive Banner
+           ---------------------------------------------------------------------- */
+        .al-portal-section {
+            background: linear-gradient(135deg, var(--al-navy-950) 0%, var(--al-navy-850) 100%);
+            border-radius: var(--al-radius-xl);
+            padding: 56px 48px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 60px rgba(9, 13, 22, 0.4);
+            margin-top: 50px;
+        }
+        .al-portal-overline {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--al-brand);
+            margin-bottom: 10px;
+            display: block;
+        }
+        .al-portal-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--al-white);
+            line-height: 1.3;
+            margin-bottom: 14px;
+        }
+        .al-portal-desc {
+            font-size: 15px;
+            color: var(--al-slate-400);
+            line-height: 1.65;
+            max-width: 620px;
+            margin-bottom: 0;
+        }
+        .al-portal-metrics {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin-top: 24px;
+        }
+        .al-metric-val {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--al-white);
+            line-height: 1;
+        }
+        .al-metric-lbl {
+            font-size: 12px;
+            color: var(--al-slate-400);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
         }
     </style>
 
+    <!-- ======================================================================
+         SECTION 1: LEAD HERO & REGIONAL FOCUS (TORONTO)
+         ====================================================================== -->
+    <section class="al-hero-section">
+        <div class="container text-center">
+            
+            <div class="al-hero-badge">
+                <span class="al-dot"></span> Official Casita Student Accommodation Partner
+            </div>
+            
+            <h1 class="al-hero-title">
+                Purpose-Built Student Housing Across Global University Cities
+            </h1>
+            
+            <p class="al-hero-lead">
+                Aroseglink partners with Casita to provide verified student accommodations in 400+ destinations worldwide, with dedicated inventory across the United Kingdom, Canada, Australia, and the United States.
+            </p>
+
+            <!-- Toronto Regional Spotlight Box -->
+            <div class="al-spotlight-box">
+                <div class="al-spotlight-header">
+                    <span class="al-spotlight-tag">Regional Focus: Toronto, Canada</span>
+                    <span style="font-size: 13px; font-weight: 600; color: #94a3b8;"><i class="fa-solid fa-circle-check text-success me-1"></i> Academic Year 2026/2027 In Take</span>
+                </div>
+                <p class="al-spotlight-desc">
+                    Over 2,400 verified student beds currently available across Downtown Toronto, North York, and Scarborough, providing rapid transit access to the University of Toronto, Toronto Metropolitan University, and York University campuses.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                    <button type="button" class="al-btn al-btn-primary" id="spotlight-btn-toronto">
+                        <i class="fa-solid fa-bed me-2"></i> Open Toronto Accommodations
+                    </button>
+                    <a href="https://wa.me/2348149699767?text=Hi%20Aroseglink,%20I%20am%20inquiring%20about%20student%20accommodations%20in%20Toronto,%20Canada." target="_blank" rel="noopener noreferrer" class="al-btn al-btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp me-2"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Global Search Console -->
+            <div class="al-search-console text-start mt-4">
+                <form id="casita-search-form">
+                    <div class="row g-3 align-items-end">
+                        <div class="col-lg-4 col-md-6">
+                            <label class="al-form-label" for="casita-country">Destination Country</label>
+                            <select id="casita-country" class="al-form-select" required>
+                                <option value="">Loading country directories...</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-5 col-md-6">
+                            <label class="al-form-label" for="casita-city">Destination City</label>
+                            <select id="casita-city" class="al-form-select" required disabled>
+                                <option value="">Select country first</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3 col-md-12">
+                            <button type="submit" id="casita-search-btn" class="al-btn al-btn-primary w-100" style="height: 52px;" disabled>
+                                Search Available Rooms <i class="fa-solid fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 2: POPULAR STUDY HUBS (REFINED LOCATION GRID)
+         ====================================================================== -->
+    <section class="al-hubs-section" id="study-hubs-section">
+        <div class="container">
+            
+            <div class="al-section-header">
+                <span class="al-section-overline">Major University Locations</span>
+                <h2 class="al-section-title">Popular Study Hubs</h2>
+                <p class="al-section-subtitle">
+                    Explore live room inventories across primary international student destinations. Select any hub to view verified tenancies immediately.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                
+                <!-- Toronto, Canada (Featured) -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="al-hub-card al-hub-featured" data-country="14" data-city="101" data-country-slug="canada" data-city-slug="toronto" data-country-name="Canada" data-city-name="Toronto">
+                        <div class="al-hub-top">
+                            <span class="al-country-badge">CA</span>
+                            <span class="al-hub-rooms"><i class="fa-solid fa-check"></i> 2,400+ Rooms</span>
+                        </div>
+                        <h3 class="al-hub-name">Toronto</h3>
+                        <p class="al-hub-country">Ontario, Canada</p>
+                        <div class="al-hub-footer">
+                            <span class="al-hub-price">From $320 CAD / wk</span>
+                            <span class="al-hub-action">View Rooms <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- London, United Kingdom -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="al-hub-card" data-country="1" data-city="1" data-country-slug="uk" data-city-slug="london" data-country-name="United Kingdom" data-city-name="London">
+                        <div class="al-hub-top">
+                            <span class="al-country-badge">UK</span>
+                            <span class="al-hub-rooms"><i class="fa-solid fa-check"></i> 8,500+ Rooms</span>
+                        </div>
+                        <h3 class="al-hub-name">London</h3>
+                        <p class="al-hub-country">United Kingdom</p>
+                        <div class="al-hub-footer">
+                            <span class="al-hub-price">From £245 / wk</span>
+                            <span class="al-hub-action">View Rooms <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coventry, United Kingdom -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="al-hub-card" data-country="1" data-city="10" data-country-slug="uk" data-city-slug="coventry" data-country-name="United Kingdom" data-city-name="Coventry">
+                        <div class="al-hub-top">
+                            <span class="al-country-badge">UK</span>
+                            <span class="al-hub-rooms"><i class="fa-solid fa-check"></i> 1,800+ Rooms</span>
+                        </div>
+                        <h3 class="al-hub-name">Coventry</h3>
+                        <p class="al-hub-country">United Kingdom</p>
+                        <div class="al-hub-footer">
+                            <span class="al-hub-price">From £145 / wk</span>
+                            <span class="al-hub-action">View Rooms <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manchester, United Kingdom -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="al-hub-card" data-country="1" data-city="2" data-country-slug="uk" data-city-slug="manchester" data-country-name="United Kingdom" data-city-name="Manchester">
+                        <div class="al-hub-top">
+                            <span class="al-country-badge">UK</span>
+                            <span class="al-hub-rooms"><i class="fa-solid fa-check"></i> 3,200+ Rooms</span>
+                        </div>
+                        <h3 class="al-hub-name">Manchester</h3>
+                        <p class="al-hub-country">United Kingdom</p>
+                        <div class="al-hub-footer">
+                            <span class="al-hub-price">From £185 / wk</span>
+                            <span class="al-hub-action">View Rooms <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Birmingham, United Kingdom -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="al-hub-card" data-country="1" data-city="3" data-country-slug="uk" data-city-slug="birmingham" data-country-name="United Kingdom" data-city-name="Birmingham">
+                        <div class="al-hub-top">
+                            <span class="al-country-badge">UK</span>
+                            <span class="al-hub-rooms"><i class="fa-solid fa-check"></i> 2,900+ Rooms</span>
+                        </div>
+                        <h3 class="al-hub-name">Birmingham</h3>
+                        <p class="al-hub-country">United Kingdom</p>
+                        <div class="al-hub-footer">
+                            <span class="al-hub-price">From £165 / wk</span>
+                            <span class="al-hub-action">View Rooms <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sydney, Australia -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="al-hub-card" data-country="2" data-city="494" data-country-slug="australia" data-city-slug="sydney" data-country-name="Australia" data-city-name="Sydney">
+                        <div class="al-hub-top">
+                            <span class="al-country-badge">AU</span>
+                            <span class="al-hub-rooms"><i class="fa-solid fa-check"></i> 3,100+ Rooms</span>
+                        </div>
+                        <h3 class="al-hub-name">Sydney</h3>
+                        <p class="al-hub-country">New South Wales, Australia</p>
+                        <div class="al-hub-footer">
+                            <span class="al-hub-price">From $380 AUD / wk</span>
+                            <span class="al-hub-action">View Rooms <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Melbourne, Australia -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="al-hub-card" data-country="2" data-city="493" data-country-slug="australia" data-city-slug="melbourne" data-country-name="Australia" data-city-name="Melbourne">
+                        <div class="al-hub-top">
+                            <span class="al-country-badge">AU</span>
+                            <span class="al-hub-rooms"><i class="fa-solid fa-check"></i> 3,600+ Rooms</span>
+                        </div>
+                        <h3 class="al-hub-name">Melbourne</h3>
+                        <p class="al-hub-country">Victoria, Australia</p>
+                        <div class="al-hub-footer">
+                            <span class="al-hub-price">From $350 AUD / wk</span>
+                            <span class="al-hub-action">View Rooms <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New York, United States -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="al-hub-card" data-country="6" data-city="201" data-country-slug="usa" data-city-slug="new-york" data-country-name="United States" data-city-name="New York">
+                        <div class="al-hub-top">
+                            <span class="al-country-badge">US</span>
+                            <span class="al-hub-rooms"><i class="fa-solid fa-check"></i> 1,400+ Rooms</span>
+                        </div>
+                        <h3 class="al-hub-name">New York</h3>
+                        <p class="al-hub-country">New York, United States</p>
+                        <div class="al-hub-footer">
+                            <span class="al-hub-price">From $480 USD / wk</span>
+                            <span class="al-hub-action">View Rooms <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 3: LIVE ACCOMMODATIONS INVENTORY (RESULTS COMPONENT)
+         ====================================================================== -->
+    <section class="al-results-section" id="accommodation-results-section">
+        <div class="container">
+            
+            <!-- Controls Bar (Active when inventory is fetched) -->
+            <div id="results-controls-wrapper" class="al-controls-bar" style="display: none;">
+                <div class="row align-items-center g-3">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="d-flex align-items-center gap-2 mb-1">
+                            <span class="al-live-indicator">
+                                <span class="al-live-dot"></span> Verified Live Inventory
+                            </span>
+                            <span id="results-count-badge" class="al-count-badge"></span>
+                        </div>
+                        <h2 id="results-title" class="al-results-title">Student Accommodations</h2>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="d-flex flex-wrap align-items-center justify-content-lg-end gap-2">
+                            <div class="al-filter-input-wrap flex-grow-1 flex-sm-grow-0">
+                                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                <input type="text" id="property-search-filter" class="al-filter-input" placeholder="Filter residence or street...">
+                                <button type="button" id="clear-search-filter" class="al-filter-clear" style="display: none;" aria-label="Clear filter">&times;</button>
+                            </div>
+                            <div>
+                                <select id="property-sort-select" class="al-sort-select" aria-label="Sort accommodations">
+                                    <option value="recommended">Featured / Recommended</option>
+                                    <option value="price-asc">Price: Low to High</option>
+                                    <option value="price-desc">Price: High to Low</option>
+                                    <option value="name-asc">Name: A to Z</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Amenity Filters -->
+                <div class="al-amenity-chips">
+                    <span class="text-muted d-none d-md-inline" style="font-size: 13px; font-weight: 600;">Filter:</span>
+                    <button type="button" class="al-chip-btn active" data-filter="all">All Residences</button>
+                    <button type="button" class="al-chip-btn" data-filter="bills"><i class="fa-solid fa-bolt text-warning"></i> Bills Included</button>
+                    <button type="button" class="al-chip-btn" data-filter="wifi"><i class="fa-solid fa-wifi text-primary"></i> High-Speed Wi-Fi</button>
+                    <button type="button" class="al-chip-btn" data-filter="laundry"><i class="fa-solid fa-shirt text-info"></i> Laundry Facilities</button>
+                    <button type="button" class="al-chip-btn" data-filter="gym"><i class="fa-solid fa-dumbbell text-danger"></i> Fitness Suite</button>
+                </div>
+            </div>
+
+            <!-- Error Banner -->
+            <div id="casita-error" class="alert alert-warning mb-4" style="display: none; max-width: 750px; margin: 0 auto; border-radius: var(--al-radius-md);"></div>
+
+            <!-- Skeleton Shimmer Loader (Zero CLS) -->
+            <div class="row g-4" id="results-skeletons" style="display: none;">
+                <div class="col-lg-4 col-md-6">
+                    <div class="al-skeleton-card">
+                        <div class="al-skeleton-img al-skeleton-shimmer"></div>
+                        <div class="al-skeleton-body">
+                            <div class="al-skeleton-shimmer mb-3" style="height: 22px; width: 75%; border-radius: 4px;"></div>
+                            <div class="al-skeleton-shimmer mb-3" style="height: 14px; width: 50%; border-radius: 4px;"></div>
+                            <div class="al-skeleton-shimmer mb-4" style="height: 14px; width: 100%; border-radius: 4px;"></div>
+                            <div class="al-skeleton-shimmer" style="height: 44px; width: 100%; border-radius: 8px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="al-skeleton-card">
+                        <div class="al-skeleton-img al-skeleton-shimmer"></div>
+                        <div class="al-skeleton-body">
+                            <div class="al-skeleton-shimmer mb-3" style="height: 22px; width: 75%; border-radius: 4px;"></div>
+                            <div class="al-skeleton-shimmer mb-3" style="height: 14px; width: 50%; border-radius: 4px;"></div>
+                            <div class="al-skeleton-shimmer mb-4" style="height: 14px; width: 100%; border-radius: 4px;"></div>
+                            <div class="al-skeleton-shimmer" style="height: 44px; width: 100%; border-radius: 8px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="al-skeleton-card">
+                        <div class="al-skeleton-img al-skeleton-shimmer"></div>
+                        <div class="al-skeleton-body">
+                            <div class="al-skeleton-shimmer mb-3" style="height: 22px; width: 75%; border-radius: 4px;"></div>
+                            <div class="al-skeleton-shimmer mb-3" style="height: 14px; width: 50%; border-radius: 4px;"></div>
+                            <div class="al-skeleton-shimmer mb-4" style="height: 14px; width: 100%; border-radius: 4px;"></div>
+                            <div class="al-skeleton-shimmer" style="height: 44px; width: 100%; border-radius: 8px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accommodations Grid -->
+            <div class="row g-4" id="accommodations-grid">
+                <!-- Initial State: Prompting selection -->
+                <div class="col-12" id="empty-state">
+                    <div class="text-center py-5" style="background: var(--al-slate-50); border: 1px dashed var(--al-slate-300); border-radius: var(--al-radius-lg); padding: 50px 24px;">
+                        <i class="fa-solid fa-city text-muted mb-3" style="font-size: 40px; opacity: 0.4;"></i>
+                        <h4 style="font-size: 19px; font-weight: 700; color: var(--al-slate-800); margin-bottom: 8px;">Select a Destination to View Available Rooms</h4>
+                        <p style="color: var(--al-slate-500); font-size: 14.5px; max-width: 520px; margin: 0 auto;">
+                            Use the search console above or choose one of our major study hubs to load verified student accommodations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Global Casita Portal Executive Banner -->
+            <div class="al-portal-section" id="direct-link-fallback" style="display: none;">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 col-md-12 mb-4 mb-lg-0">
+                        <span class="al-portal-overline">Global Property Network</span>
+                        <h3 class="al-portal-title">Access Over 1,000,000 Verified Student Beds Worldwide</h3>
+                        <p class="al-portal-desc">
+                            Through our institutional integration with Casita, students gain direct access to purpose-built residences across 400+ cities in the United Kingdom, North America, Europe, and the Asia-Pacific region.
+                        </p>
+                        <div class="al-portal-metrics">
+                            <div>
+                                <div class="al-metric-val">400+</div>
+                                <div class="al-metric-lbl">Global Cities</div>
+                            </div>
+                            <div>
+                                <div class="al-metric-val">1M+</div>
+                                <div class="al-metric-lbl">Verified Beds</div>
+                            </div>
+                            <div>
+                                <div class="al-metric-val">100%</div>
+                                <div class="al-metric-lbl">Tenancy Protection</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 text-lg-end">
+                        <div class="d-flex flex-column gap-2 justify-content-lg-end">
+                            <a href="https://www.casita.com/?utm_source=aro-7354" target="_blank" rel="noopener noreferrer" class="al-btn al-btn-primary">
+                                Open Global Casita Portal <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
+                            </a>
+                            <a href="https://wa.me/2348149699767?text=Hi%20Aroseglink,%20I%20need%20help%20finding%20student%20accommodation" target="_blank" rel="noopener noreferrer" class="al-btn al-btn-secondary">
+                                <i class="fa-brands fa-whatsapp text-success me-2 fs-5"></i> Consult Housing Advisor
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 4: VALUE PROPOSITIONS (INSTITUTIONAL TRUST PILLARS)
+         ====================================================================== -->
+    <section class="al-values-section">
+        <div class="container">
+            
+            <div class="al-section-header">
+                <span class="al-section-overline">Institutional Guarantees</span>
+                <h2 class="al-section-title">Student Housing Built on Transparency</h2>
+                <p class="al-section-subtitle">
+                    Every residence adheres to strict safety, contractual, and tenancy standards established through our verified partnership with Casita.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                
+                <!-- Pillar 1: Verified Tenancy Contracts -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="al-feature-card">
+                        <div class="al-feature-icon-frame">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="al-feature-title">Verified Tenancy Contracts</h3>
+                        <p class="al-feature-text">
+                            All residences operate under formal tenancy agreements with accredited PBSA operators, backed by statutory deposit protection schemes and documented safety audits.
+                        </p>
+                        <span class="al-feature-guarantee">
+                            <i class="fa-solid fa-check text-success"></i> Tenancy Protection
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Pillar 2: Consolidated Utility Billing -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="al-feature-card">
+                        <div class="al-feature-icon-frame">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="al-feature-title">Consolidated Utility Billing</h3>
+                        <p class="al-feature-text">
+                            Rental agreements include gas, water, electricity, heating, and commercial-grade broadband within a single fixed rate, preventing unexpected cost inflation.
+                        </p>
+                        <span class="al-feature-guarantee">
+                            <i class="fa-solid fa-check text-success"></i> All Utilities Included
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Pillar 3: Zero Placement Fees -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="al-feature-card">
+                        <div class="al-feature-icon-frame">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                        <h3 class="al-feature-title">Zero Booking Commissions</h3>
+                        <p class="al-feature-text">
+                            As an institutional partner, Aroseglink delivers room sourcing, tenancy review, and booking processing with zero broker fees charged to students or families.
+                        </p>
+                        <span class="al-feature-guarantee">
+                            <i class="fa-solid fa-check text-success"></i> No Broker Fees
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Pillar 4: Strategic Campus Proximity -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="al-feature-card">
+                        <div class="al-feature-icon-frame">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="al-feature-title">Strategic Campus Proximity</h3>
+                        <p class="al-feature-text">
+                            Listed properties sit within documented walking corridors or direct rapid-transit routes to primary university faculties, libraries, and transport hubs.
+                        </p>
+                        <span class="al-feature-guarantee">
+                            <i class="fa-solid fa-check text-success"></i> Walking / Transit Access
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ======================================================================
+         CLIENT CONTROLLER SCRIPT (STATE MACHINE & INTEGRATION)
+         ====================================================================== -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Core DOM Elements
             const countrySelect = document.getElementById('casita-country');
             const citySelect = document.getElementById('casita-city');
             const searchBtn = document.getElementById('casita-search-btn');
@@ -324,13 +1366,33 @@
             const errorDiv = document.getElementById('casita-error');
             const resultsGrid = document.getElementById('accommodations-grid');
             const resultsTitle = document.getElementById('results-title');
-            const loader = document.getElementById('results-loader');
+            const resultsSkeletons = document.getElementById('results-skeletons');
             const emptyState = document.getElementById('empty-state');
             const fallbackDiv = document.getElementById('direct-link-fallback');
+            const controlsWrapper = document.getElementById('results-controls-wrapper');
+            const countBadge = document.getElementById('results-count-badge');
+            const searchFilterInput = document.getElementById('property-search-filter');
+            const clearFilterBtn = document.getElementById('clear-search-filter');
+            const sortSelect = document.getElementById('property-sort-select');
+            const amenityChips = document.querySelectorAll('.al-chip-btn');
+            const spotlightTorontoBtn = document.getElementById('spotlight-btn-toronto');
             
             const fallbackImg = "assets/images/banner/04.jpg";
 
-            // Fallback dataset for ultimate resilience
+            // State management
+            const appState = {
+                rawBuildings: [],
+                countrySlug: '',
+                citySlug: '',
+                cityName: '',
+                countryName: '',
+                partnerPortalUrl: '',
+                filterQuery: '',
+                selectedAmenity: 'all',
+                sortBy: 'recommended'
+            };
+
+            // High resilience fallback datasets
             const fallbackCountries = [
                 { id: 1, country_name: "United Kingdom", country_slug: "uk" },
                 { id: 14, country_name: "Canada", country_slug: "canada" },
@@ -387,17 +1449,30 @@
                 ]
             };
 
+            // HTML entity escaper for safe rendering
+            function escapeHtml(str) {
+                if (!str) return '';
+                return String(str)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#39;');
+            }
+
+            // Populate Countries
             function populateCountries(list) {
                 countrySelect.innerHTML = '<option value="">Select Destination Country</option>';
-                list.forEach(country => {
+                list.forEach(c => {
                     const opt = document.createElement('option');
-                    opt.value = country.id;
-                    opt.dataset.slug = country.country_slug;
-                    opt.textContent = country.country_name;
+                    opt.value = c.id;
+                    opt.dataset.slug = c.country_slug;
+                    opt.textContent = c.country_name;
                     countrySelect.appendChild(opt);
                 });
             }
 
+            // Populate Cities
             function populateCities(list) {
                 citySelect.innerHTML = '<option value="">Select Destination City</option>';
                 list.forEach(city => {
@@ -410,7 +1485,7 @@
                 citySelect.disabled = false;
             }
 
-            // 1. Fetch Countries via Proxy with fallback
+            // 1. Initial Load: Fetch Countries via Proxy
             fetch('casita-proxy.php?endpoint=api/countries')
                 .then(res => res.json())
                 .then(data => {
@@ -425,11 +1500,10 @@
                     populateCountries(fallbackCountries);
                 });
 
-            // 2. Fetch Cities on Country Selection
-            countrySelect.addEventListener('change', function() {
-                const countryId = this.value;
+            // 2. Load Cities on Country Change
+            function handleCountryChange(countryId, callback) {
                 if (!countryId) {
-                    citySelect.innerHTML = '<option value="">Select a country first</option>';
+                    citySelect.innerHTML = '<option value="">Select country first</option>';
                     citySelect.disabled = true;
                     searchBtn.disabled = true;
                     return;
@@ -450,6 +1524,7 @@
                             citySelect.innerHTML = '<option value="general">All Cities</option>';
                             citySelect.disabled = false;
                         }
+                        if (callback) callback();
                     })
                     .catch(err => {
                         console.warn('Using resilient city list:', err);
@@ -459,14 +1534,233 @@
                             citySelect.innerHTML = '<option value="general">Major Cities</option>';
                             citySelect.disabled = false;
                         }
+                        if (callback) callback();
                     });
+            }
+
+            countrySelect.addEventListener('change', function() {
+                handleCountryChange(this.value);
             });
 
             citySelect.addEventListener('change', function() {
                 searchBtn.disabled = !this.value;
             });
 
-            // 3. Perform Search & Render Building Cards
+            // 3. Trigger Hub Query Programmatically
+            function triggerHubSearch(countryId, cityId) {
+                countrySelect.value = countryId;
+                handleCountryChange(countryId, function() {
+                    citySelect.value = cityId;
+                    searchBtn.disabled = false;
+                    searchForm.dispatchEvent(new Event('submit', { cancelable: true }));
+                });
+            }
+
+            // Hub Card Click Listeners
+            document.querySelectorAll('.al-hub-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const countryId = this.dataset.country;
+                    const cityId = this.dataset.city;
+                    triggerHubSearch(countryId, cityId);
+                });
+            });
+
+            // Toronto Spotlight Button Trigger
+            if (spotlightTorontoBtn) {
+                spotlightTorontoBtn.addEventListener('click', function() {
+                    triggerHubSearch('14', '101');
+                });
+            }
+
+            // 4. Client-Side Filter & Sort Engine
+            function getFilteredAndSortedList() {
+                let list = [...appState.rawBuildings];
+
+                // 4a. Text Filter (name, address, facilities)
+                if (appState.filterQuery.trim()) {
+                    const q = appState.filterQuery.toLowerCase().trim();
+                    list = list.filter(b => {
+                        const nameMatch = (b.name || '').toLowerCase().includes(q);
+                        const addrMatch = (b.address || '').toLowerCase().includes(q);
+                        const facMatch = (b.facilities || []).some(f => (typeof f === 'string' ? f : (f.title || f.facilities_name || '')).toLowerCase().includes(q));
+                        return nameMatch || addrMatch || facMatch;
+                    });
+                }
+
+                // 4b. Amenity Filter
+                if (appState.selectedAmenity !== 'all') {
+                    const amenKey = appState.selectedAmenity.toLowerCase();
+                    list = list.filter(b => {
+                        return (b.facilities || []).some(f => {
+                            const title = (typeof f === 'string' ? f : (f.title || f.facilities_name || '')).toLowerCase();
+                            if (amenKey === 'bills') return title.includes('bill') || title.includes('utility');
+                            if (amenKey === 'wifi') return title.includes('wi-fi') || title.includes('wifi') || title.includes('internet');
+                            if (amenKey === 'laundry') return title.includes('laundry') || title.includes('washer');
+                            if (amenKey === 'gym') return title.includes('gym') || title.includes('fitness');
+                            return title.includes(amenKey);
+                        });
+                    });
+                }
+
+                // 4c. Sort
+                if (appState.sortBy === 'price-asc') {
+                    list.sort((a, b) => {
+                        const pa = a.min_price ? parseFloat(a.min_price) : 999999;
+                        const pb = b.min_price ? parseFloat(b.min_price) : 999999;
+                        return pa - pb;
+                    });
+                } else if (appState.sortBy === 'price-desc') {
+                    list.sort((a, b) => {
+                        const pa = a.min_price ? parseFloat(a.min_price) : 0;
+                        const pb = b.min_price ? parseFloat(b.min_price) : 0;
+                        return pb - pa;
+                    });
+                } else if (appState.sortBy === 'name-asc') {
+                    list.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+                }
+
+                return list;
+            }
+
+            // 5. Render Building Cards
+            function renderResultsCards() {
+                const list = getFilteredAndSortedList();
+                resultsGrid.innerHTML = '';
+
+                // Update count badge
+                countBadge.textContent = `${list.length} of ${appState.rawBuildings.length} Residences`;
+
+                if (list.length === 0) {
+                    resultsGrid.innerHTML = `
+                        <div class="col-12 text-center py-5">
+                            <div style="max-width:540px; margin:0 auto; background:var(--al-white); padding:40px; border-radius:var(--al-radius-lg); border:1px solid var(--al-slate-200); box-shadow:var(--al-shadow-card);">
+                                <i class="fa-solid fa-filter-circle-xmark" style="font-size:38px; color:var(--al-slate-400); margin-bottom:16px;"></i>
+                                <h4 style="font-weight:700; color:var(--al-slate-900); margin-bottom:8px;">No Residences Match Current Filters</h4>
+                                <p style="color:var(--al-slate-600); font-size:14px; margin-bottom:20px;">Try adjusting your search query or resetting the amenity selection.</p>
+                                <button type="button" id="btn-reset-filters" class="al-btn al-btn-secondary" style="padding:10px 22px; font-size:13.5px;">
+                                    Reset Filters
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    const resetBtn = document.getElementById('btn-reset-filters');
+                    if (resetBtn) {
+                        resetBtn.addEventListener('click', function() {
+                            searchFilterInput.value = '';
+                            appState.filterQuery = '';
+                            clearFilterBtn.style.display = 'none';
+                            appState.selectedAmenity = 'all';
+                            amenityChips.forEach(c => c.classList.toggle('active', c.dataset.filter === 'all'));
+                            renderResultsCards();
+                        });
+                    }
+                    return;
+                }
+
+                list.forEach(building => {
+                    const imgSrc = building.image || fallbackImg;
+                    const curr = building.currency_sign || '£';
+                    
+                    let priceBadge = 'Price on Request';
+                    if (building.min_price) {
+                        priceBadge = `From ${curr}${building.min_price} / wk`;
+                    }
+
+                    let amenitiesHtml = '';
+                    if (building.facilities && building.facilities.length > 0) {
+                        const pills = building.facilities.slice(0, 4).map(f => {
+                            const name = typeof f === 'string' ? f : (f.title || f.facilities_name || '');
+                            if (!name) return '';
+                            let icon = '<i class="fa-solid fa-check text-muted"></i>';
+                            const lower = name.toLowerCase();
+                            if (lower.includes('wi-fi') || lower.includes('wifi')) icon = '<i class="fa-solid fa-wifi text-primary"></i>';
+                            else if (lower.includes('bill')) icon = '<i class="fa-solid fa-bolt text-warning"></i>';
+                            else if (lower.includes('laundry')) icon = '<i class="fa-solid fa-shirt text-info"></i>';
+                            else if (lower.includes('gym')) icon = '<i class="fa-solid fa-dumbbell text-danger"></i>';
+                            return `<span class="al-amenity-tag">${icon} ${escapeHtml(name)}</span>`;
+                        }).join('');
+                        amenitiesHtml = `<div class="al-residence-amenities">${pills}</div>`;
+                    }
+
+                    const distanceHtml = building.distance 
+                        ? `<div class="al-residence-distance"><i class="fa-solid fa-person-walking me-1"></i> ${escapeHtml(building.distance)}</div>` 
+                        : '';
+
+                    const addressText = building.address || `${appState.cityName}, ${appState.countryName}`;
+
+                    // Guarantee utm_source tracking parameter
+                    let bookUrl = building.url || appState.partnerPortalUrl;
+                    if (!bookUrl.includes('utm_source=')) {
+                        bookUrl += (bookUrl.includes('?') ? '&' : '?') + 'utm_source=aro-7354';
+                    } else {
+                        bookUrl = bookUrl.replace(/([?&])utm_source=[^&]*/, `$1utm_source=aro-7354`);
+                    }
+
+                    const whatsappInquireMsg = encodeURIComponent(`Hi Aroseglink, I am inquiring about booking ${building.name} in ${appState.cityName}.`);
+
+                    const cardHtml = `
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="al-residence-card">
+                                <div class="al-residence-media">
+                                    <span class="al-badge-verified">
+                                        <i class="fa-solid fa-shield-halved text-success"></i> PBSA Verified
+                                    </span>
+                                    <div class="al-residence-price">${priceBadge}</div>
+                                    <img src="${imgSrc}" alt="${escapeHtml(building.name)}" loading="lazy" onerror="this.src='${fallbackImg}';">
+                                </div>
+                                <div class="al-residence-body">
+                                    <h3 class="al-residence-title" title="${escapeHtml(building.name)}">${escapeHtml(building.name)}</h3>
+                                    <p class="al-residence-address">
+                                        <i class="fa-solid fa-location-dot text-danger"></i>
+                                        <span>${escapeHtml(addressText)}</span>
+                                    </p>
+                                    ${distanceHtml}
+                                    ${amenitiesHtml}
+                                    <div class="al-residence-actions">
+                                        <a href="${bookUrl}" target="_blank" rel="noopener noreferrer" class="al-btn al-btn-primary al-btn-book">
+                                            View Residence Details <i class="fa-solid fa-arrow-up-right-from-square ms-1" style="font-size:12px;"></i>
+                                        </a>
+                                        <a href="https://wa.me/2348149699767?text=${whatsappInquireMsg}" target="_blank" rel="noopener noreferrer" class="al-btn al-btn-whatsapp al-btn-chat" title="Consult Advisor on WhatsApp">
+                                            <i class="fa-brands fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    resultsGrid.insertAdjacentHTML('beforeend', cardHtml);
+                });
+            }
+
+            // 6. Filter & Sort Event Listeners
+            searchFilterInput.addEventListener('input', function() {
+                appState.filterQuery = this.value;
+                clearFilterBtn.style.display = this.value.length > 0 ? 'block' : 'none';
+                renderResultsCards();
+            });
+
+            clearFilterBtn.addEventListener('click', function() {
+                searchFilterInput.value = '';
+                appState.filterQuery = '';
+                clearFilterBtn.style.display = 'none';
+                renderResultsCards();
+            });
+
+            sortSelect.addEventListener('change', function() {
+                appState.sortBy = this.value;
+                renderResultsCards();
+            });
+
+            amenityChips.forEach(chip => {
+                chip.addEventListener('click', function() {
+                    amenityChips.forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    appState.selectedAmenity = this.dataset.filter;
+                    renderResultsCards();
+                });
+            });
+
+            // 7. Perform Search & Handle Global Results
             searchForm.addEventListener('submit', function(e) {
                 e.preventDefault();
 
@@ -478,15 +1772,28 @@
                 const cityName = selectedCityOpt.textContent || 'Your Destination';
                 const countryName = selectedCountryOpt.textContent || 'Selected Destination';
 
-                emptyState.style.display = 'none';
-                errorDiv.style.display = 'none';
-                resultsGrid.innerHTML = '';
-                resultsTitle.style.display = 'none';
-                loader.style.display = 'block';
-                fallbackDiv.style.display = 'none';
+                appState.countrySlug = countrySlug;
+                appState.citySlug = citySlug;
+                appState.cityName = cityName;
+                appState.countryName = countryName;
 
                 const searchUrl = `casita-proxy.php?endpoint=student-accommodation/${encodeURIComponent(countrySlug)}/${encodeURIComponent(citySlug)}`;
                 const partnerPortalUrl = `https://www.casita.com/student-accommodation/${encodeURIComponent(countrySlug)}/${encodeURIComponent(citySlug)}?utm_source=aro-7354`;
+                appState.partnerPortalUrl = partnerPortalUrl;
+
+                // UI Prep: Zero CLS Skeleton shimmer
+                if (emptyState) emptyState.style.display = 'none';
+                errorDiv.style.display = 'none';
+                controlsWrapper.style.display = 'none';
+                resultsGrid.innerHTML = '';
+                resultsSkeletons.style.display = 'flex';
+                fallbackDiv.style.display = 'none';
+
+                // Smooth scroll to results
+                const resultsSection = document.getElementById('accommodation-results-section');
+                if (resultsSection) {
+                    resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
 
                 fetch(searchUrl)
                     .then(res => {
@@ -494,102 +1801,64 @@
                         return res.json();
                     })
                     .then(data => {
-                        loader.style.display = 'none';
+                        resultsSkeletons.style.display = 'none';
 
                         const buildings = data.building || [];
-
-                        resultsTitle.style.display = 'block';
-                        resultsTitle.innerHTML = `Student Accommodations in ${cityName}, ${countryName} <span style="font-size:16px; font-weight:400; color:#6c757d;">(${buildings.length} verified listings found)</span>`;
+                        appState.rawBuildings = buildings;
 
                         if (buildings.length > 0) {
-                            buildings.forEach(building => {
-                                const imgSrc = building.image || fallbackImg;
-                                const curr = building.currency_sign || '£';
-                                
-                                let priceBadge = 'Price on Request';
-                                if (building.min_price) {
-                                    priceBadge = `From ${curr}${building.min_price} / week`;
-                                }
-
-                                let amenitiesHtml = '';
-                                if (building.facilities && building.facilities.length > 0) {
-                                    const pills = building.facilities.slice(0, 4).map(f => {
-                                        const name = typeof f === 'string' ? f : (f.title || f.facilities_name || '');
-                                        return name ? `<span class="amenity-pill">${name}</span>` : '';
-                                    }).join('');
-                                    amenitiesHtml = `<div class="amenities">${pills}</div>`;
-                                }
-
-                                const distanceHtml = building.distance 
-                                    ? `<div class="distance"><i class="fa-solid fa-person-walking" style="margin-right:4px;"></i> ${building.distance}</div>` 
-                                    : '';
-
-                                const addressText = building.address || `${cityName}, ${countryName}`;
-
-                                let bookUrl = building.url || partnerPortalUrl;
-                                if (!bookUrl.includes('utm_source=')) {
-                                    bookUrl += (bookUrl.includes('?') ? '&' : '?') + 'utm_source=aro-7354';
-                                } else {
-                                    bookUrl = bookUrl.replace(/([?&])utm_source=[^&]*/, `$1utm_source=aro-7354`);
-                                }
-
-                                const cardHtml = `
-                                    <div class="col-lg-4 col-md-6 mb-4">
-                                        <div class="building-card">
-                                            <div class="image-wrapper">
-                                                <img src="${imgSrc}" alt="${building.name}" onerror="this.src='${fallbackImg}';">
-                                                <div class="price-tag">${priceBadge}</div>
-                                            </div>
-                                            <div class="content">
-                                                <h3 class="title">${building.name}</h3>
-                                                <p class="address">
-                                                    <i class="fa-solid fa-location-dot" style="color:#E51A24;"></i>
-                                                    <span>${addressText}</span>
-                                                </p>
-                                                ${distanceHtml}
-                                                ${amenitiesHtml}
-                                                <a href="${bookUrl}" target="_blank" rel="noopener" class="btn-book">
-                                                    View Details & Book <i class="fa-solid fa-arrow-up-right-from-square" style="margin-left:6px; font-size:13px;"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                `;
-                                resultsGrid.insertAdjacentHTML('beforeend', cardHtml);
-                            });
-
+                            resultsTitle.innerHTML = `Student Accommodations in ${escapeHtml(cityName)}, ${escapeHtml(countryName)}`;
+                            controlsWrapper.style.display = 'block';
                             fallbackDiv.style.display = 'block';
+                            renderResultsCards();
                         } else {
+                            controlsWrapper.style.display = 'none';
                             resultsGrid.innerHTML = `
                                 <div class="col-12 text-center py-5">
-                                    <div style="max-width:580px; margin:0 auto; background:#fff; padding:40px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.05); border:1px solid #edf0f2;">
-                                        <i class="fa-solid fa-house-chimney-crack" style="font-size:48px; color:#E51A24; margin-bottom:18px;"></i>
-                                        <h4 style="font-weight:700; color:#222; margin-bottom:10px;">Explore More Properties in ${cityName}</h4>
-                                        <p style="color:#666; font-size:15px; margin-bottom:24px;">Direct instant cards are currently being updated for this city, but verified student rooms are available on our dedicated booking portal.</p>
-                                        <a href="${partnerPortalUrl}" target="_blank" rel="noopener" class="rts-btn btn-primary" style="padding:12px 28px; border-radius:8px;">
-                                            Browse ${cityName} on Casita <i class="fa-solid fa-arrow-right" style="margin-left:6px;"></i>
-                                        </a>
+                                    <div style="max-width:620px; margin:0 auto; background:var(--al-white); padding:45px 35px; border-radius:var(--al-radius-lg); box-shadow:var(--al-shadow-card); border:1px solid var(--al-slate-200);">
+                                        <div style="width:64px; height:64px; border-radius:50%; background:var(--al-brand-subtle); color:var(--al-brand); display:flex; align-items:center; justify-content:center; font-size:28px; margin:0 auto 20px;">
+                                            <i class="fa-solid fa-house-chimney"></i>
+                                        </div>
+                                        <h3 style="font-weight:800; color:var(--al-slate-900); margin-bottom:12px;">Verified Listings in ${escapeHtml(cityName)}</h3>
+                                        <p style="color:var(--al-slate-600); font-size:15px; line-height:1.6; margin-bottom:28px;">Direct instant cards are currently synchronizing for this market. Complete live room availability and virtual walkthroughs are accessible through our dedicated portal.</p>
+                                        <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                                            <a href="${partnerPortalUrl}" target="_blank" rel="noopener noreferrer" class="al-btn al-btn-primary">
+                                                Browse ${escapeHtml(cityName)} on Casita <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
+                                            </a>
+                                            <a href="https://wa.me/2348149699767?text=${encodeURIComponent('Hi Aroseglink, please assist me with student rooms in ' + cityName)}" target="_blank" rel="noopener noreferrer" class="al-btn al-btn-secondary">
+                                                <i class="fa-brands fa-whatsapp text-success me-2 fs-5"></i> Consult Housing Advisor
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             `;
+                            fallbackDiv.style.display = 'block';
                         }
                     })
                     .catch(err => {
                         console.error('Search request failed:', err);
-                        loader.style.display = 'none';
-                        resultsTitle.style.display = 'none';
+                        resultsSkeletons.style.display = 'none';
+                        controlsWrapper.style.display = 'none';
                         resultsGrid.innerHTML = `
-                            <div class="col-12 text-center py-4">
-                                <div style="max-width:600px; margin:0 auto; background:#fff; padding:35px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.05); border:1px solid #edf0f2;">
-                                    <i class="fa-solid fa-city" style="font-size:46px; color:#E51A24; margin-bottom:16px;"></i>
-                                    <h4 style="font-weight:700; color:#222; margin-bottom:10px;">View Student Rooms in ${cityName}</h4>
-                                    <p style="color:#666; font-size:15px; margin-bottom:24px;">Click below to browse all live availability, virtual 3D tours, and book directly on our verified accommodation portal.</p>
-                                    <a href="${partnerPortalUrl}" target="_blank" rel="noopener" class="rts-btn btn-primary" style="padding:12px 30px; border-radius:8px;">
-                                        Open ${cityName} Accommodations <i class="fa-solid fa-external-link-alt" style="margin-left:8px;"></i>
-                                    </a>
+                            <div class="col-12 text-center py-5">
+                                <div style="max-width:620px; margin:0 auto; background:var(--al-white); padding:45px 35px; border-radius:var(--al-radius-lg); box-shadow:var(--al-shadow-card); border:1px solid var(--al-slate-200);">
+                                    <div style="width:64px; height:64px; border-radius:50%; background:var(--al-brand-subtle); color:var(--al-brand); display:flex; align-items:center; justify-content:center; font-size:28px; margin:0 auto 20px;">
+                                        <i class="fa-solid fa-building-circle-check"></i>
+                                    </div>
+                                    <h3 style="font-weight:800; color:var(--al-slate-900); margin-bottom:12px;">Live Accommodations in ${escapeHtml(cityName)}</h3>
+                                    <p style="color:var(--al-slate-600); font-size:15px; line-height:1.6; margin-bottom:28px;">Connect directly to our verified reservation network to browse current room availability, 3D virtual walkthroughs, and book securely.</p>
+                                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                                        <a href="${partnerPortalUrl}" target="_blank" rel="noopener noreferrer" class="al-btn al-btn-primary">
+                                            Open ${escapeHtml(cityName)} Accommodations <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
+                                        </a>
+                                        <a href="https://wa.me/2348149699767?text=${encodeURIComponent('Hi Aroseglink, please assist me with student rooms in ' + cityName)}" target="_blank" rel="noopener noreferrer" class="al-btn al-btn-secondary">
+                                            <i class="fa-brands fa-whatsapp text-success me-2 fs-5"></i> Chat on WhatsApp
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         `;
+                        fallbackDiv.style.display = 'block';
                     });
             });
         });
