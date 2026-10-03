@@ -86,7 +86,7 @@ if (substr($trimmed, 0, 1) === '{' || substr($trimmed, 0, 1) === '[') {
     }
 }
 
-// 2. If Casita returned SSR HTML (from Next.js search pages)
+// 2. If Casita returned SSR HTML 
 $buildings = [];
 
 // Strategy A: Extract from Next.js __NEXT_DATA__
