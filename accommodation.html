@@ -187,7 +187,7 @@
             <div class="row mt--40 text-center" id="direct-link-fallback" style="display: none;">
                 <div class="col-12">
                     <p style="color: #555; margin-bottom: 15px;">Want to browse all global properties directly?</p>
-                    <a href="https://www.casita.com/aroseglink" target="_blank" class="rts-btn btn-secondary" style="border-radius: 6px; background: #333; color: #fff;">
+                    <a href="https://www.casita.com/?utm_source=aro-7354" target="_blank" class="rts-btn btn-secondary" style="border-radius: 6px; background: #333; color: #fff;">
                         Open Full Casita Portal <i class="fa-solid fa-external-link-alt" style="margin-left: 8px;"></i>
                     </a>
                 </div>
@@ -486,7 +486,7 @@
                 fallbackDiv.style.display = 'none';
 
                 const searchUrl = `casita-proxy.php?endpoint=student-accommodation/${encodeURIComponent(countrySlug)}/${encodeURIComponent(citySlug)}`;
-                const partnerPortalUrl = `https://www.casita.com/student-accommodation/${encodeURIComponent(countrySlug)}/${encodeURIComponent(citySlug)}?utm_source=aroseglink`;
+                const partnerPortalUrl = `https://www.casita.com/student-accommodation/${encodeURIComponent(countrySlug)}/${encodeURIComponent(citySlug)}?utm_source=aro-7354`;
 
                 fetch(searchUrl)
                     .then(res => {
@@ -528,7 +528,9 @@
 
                                 let bookUrl = building.url || partnerPortalUrl;
                                 if (!bookUrl.includes('utm_source=')) {
-                                    bookUrl += (bookUrl.includes('?') ? '&' : '?') + 'utm_source=aroseglink';
+                                    bookUrl += (bookUrl.includes('?') ? '&' : '?') + 'utm_source=aro-7354';
+                                } else {
+                                    bookUrl = bookUrl.replace(/([?&])utm_source=[^&]*/, `$1utm_source=aro-7354`);
                                 }
 
                                 const cardHtml = `
