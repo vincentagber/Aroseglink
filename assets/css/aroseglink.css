@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css');
+
 /* ==========================================================================
    Aroseglink Services Limited - Official Brand Theme
    Brand Palette: Black (#111111) & Red (#E51A24)
    ========================================================================== */
+
+/* FontAwesome backward compatibility alias */
+.fa-shield-halved:before {
+  content: "\f3ed";
+}
 
 :root {
   --brand-red: #E51A24;
@@ -1111,6 +1119,302 @@ body, html {
   transform: scale(1.06);
 }
 
+/* ========================================================
+   Corporate Gallery & Portfolio Enhancement
+   ======================================================== */
+.gallery-section-header {
+  margin-bottom: 35px;
+}
+
+.gallery-section-badge {
+  color: var(--brand-red, #E51A24);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.gallery-main-title {
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 14px;
+  font-size: 34px;
+  line-height: 1.25;
+}
+
+.gallery-sub-lead {
+  max-width: 740px;
+  margin: 0 auto;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.gallery-filter-wrap {
+  margin-bottom: 45px;
+}
+
+/* Modern segmented control pill container */
+.gallery-segmented-nav {
+  display: inline-flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: #f1f5f9;
+  padding: 6px;
+  border-radius: 50px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  max-width: 100%;
+}
+
+/* Individual filter button - override style.css width: 100% */
+button.gallery-filter-btn,
+.gallery-filter-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  max-width: max-content !important;
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+  background: transparent !important;
+  color: #475569 !important;
+  border: none !important;
+  border-radius: 40px !important;
+  padding: 9px 20px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  cursor: pointer !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  height: auto !important;
+  text-decoration: none !important;
+}
+
+button.gallery-filter-btn i,
+.gallery-filter-btn i {
+  font-size: 13px !important;
+  margin-right: 7px !important;
+  transition: color 0.2s ease !important;
+}
+
+button.gallery-filter-btn:hover,
+.gallery-filter-btn:hover {
+  color: #0f172a !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+button.gallery-filter-btn.active,
+.gallery-filter-btn.active {
+  background: var(--brand-red, #E51A24) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(229, 26, 36, 0.35) !important;
+}
+
+button.gallery-filter-btn.active i,
+.gallery-filter-btn.active i {
+  color: #ffffff !important;
+}
+
+button.gallery-filter-btn .count-badge,
+.gallery-filter-btn .count-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #e2e8f0 !important;
+  color: #475569 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  padding: 2px 7px !important;
+  border-radius: 12px !important;
+  margin-left: 8px !important;
+  line-height: 1 !important;
+  height: 18px !important;
+  transition: all 0.25s ease !important;
+}
+
+button.gallery-filter-btn:hover .count-badge,
+.gallery-filter-btn:hover .count-badge {
+  background: #cbd5e1 !important;
+  color: #1e293b !important;
+}
+
+button.gallery-filter-btn.active .count-badge,
+.gallery-filter-btn.active .count-badge {
+  background: rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
+}
+
+.single-gallery-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  background: #0f172a;
+  height: 330px;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+}
+
+.single-gallery-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.16);
+}
+
+.single-gallery-card .thumbnail {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.single-gallery-card .thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.single-gallery-card:hover .thumbnail img {
+  transform: scale(1.08);
+}
+
+.single-gallery-card .gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(15, 23, 42, 0.05) 40%, rgba(15, 23, 42, 0.92) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 22px;
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+
+.single-gallery-card:hover .gallery-overlay {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.15) 35%, rgba(15, 23, 42, 0.96) 100%);
+}
+
+.single-gallery-card .gallery-top-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.single-gallery-card .gallery-badge {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.single-gallery-card .gallery-zoom-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--brand-red, #E51A24);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  box-shadow: 0 4px 14px rgba(229, 26, 36, 0.45);
+  transition: all 0.3s ease;
+}
+
+.single-gallery-card:hover .gallery-zoom-btn {
+  background: #ffffff;
+  color: var(--brand-red, #E51A24);
+  transform: scale(1.1);
+}
+
+.single-gallery-card .gallery-caption-meta {
+  width: 100%;
+}
+
+.single-gallery-card .gallery-sub {
+  color: #fca5a5;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.single-gallery-card .gallery-title {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-item-col {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.gallery-item-col.is-hidden {
+  display: none !important;
+}
+
+@media (max-width: 991px) {
+  .gallery-segmented-nav {
+    border-radius: 24px;
+    padding: 8px;
+  }
+  button.gallery-filter-btn,
+  .gallery-filter-btn {
+    padding: 8px 16px !important;
+    font-size: 13px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .single-gallery-card {
+    height: 290px;
+  }
+  .gallery-segmented-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    border-radius: 16px !important;
+    padding: 10px !important;
+  }
+  button.gallery-filter-btn,
+  .gallery-filter-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-content: space-between !important;
+    padding: 10px 18px !important;
+  }
+}
+
 /* Contact Page - Enhanced Customer Support & Contact Info */
 .contact-info-area-wrapper-p {
   background: var(--brand-red) !important;
@@ -1249,8 +1553,9 @@ body, html {
   bottom: 14px;
   left: 14px;
   background: rgba(15, 23, 42, 0.88);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
-  color: #ffffff;
+  color: #ffffff !important;
   font-size: 11.5px;
   font-weight: 600;
   padding: 6px 14px;
@@ -1260,11 +1565,15 @@ body, html {
   gap: 6px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  pointer-events: none;
 }
 
 .team-white-badge i {
-  color: var(--brand-red, #E51A24);
+  color: var(--brand-red, #E51A24) !important;
   font-size: 12px;
+  line-height: 1;
+  display: inline-block;
 }
 
 .team-white-info {
@@ -1308,13 +1617,14 @@ body, html {
 }
 
 .team-white-social a {
-  width: 34px;
-  height: 34px;
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
   border-radius: 8px;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  color: #64748b;
-  display: flex;
+  color: #64748b !important;
+  display: inline-flex !important;
   align-items: center;
   justify-content: center;
   font-size: 14px;
@@ -1323,9 +1633,15 @@ body, html {
 }
 
 .team-white-social a:hover {
-  background: var(--brand-red, #E51A24);
-  color: #ffffff;
-  border-color: var(--brand-red, #E51A24);
+  background: var(--brand-red, #E51A24) !important;
+  color: #ffffff !important;
+  border-color: var(--brand-red, #E51A24) !important;
+}
+
+.team-white-social a i {
+  line-height: 1;
+  display: inline-block;
+  color: inherit !important;
 }
 
 /* ==========================================================================

@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Invena – A modern and responsive HTML template for consulting businesses. Perfect for finance, corporate, and agency websites. SEO-friendly, fast-loading, and easy to customize. Create a professional online presence today!">
+        content="Explore the visual gallery and portfolio of Aroseglink Services Limited — showcasing verified university partnerships, student accommodations, global real estate acquisitions, and executive leadership.">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png">
-    <title>Aroseglink Services Limited</title>
+    <title>Visual Portfolio &amp; Corporate Gallery - Aroseglink Services Limited</title>
     <link rel="stylesheet preload" href="assets/css/plugins/fontawesome.css" as="style">
     <link rel="stylesheet preload" href="assets/css/plugins/swiper.css" as="style">
     <link rel="stylesheet preload" href="assets/css/plugins/metismenu.css" as="style">
@@ -16,14 +16,16 @@
     <link rel="stylesheet preload" href="assets/css/plugins/odometer.css" as="style">
     <link rel="stylesheet preload" href="assets/css/vendor/bootstrap.min.css" as="style">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet preload" as="style">
     <link rel="preload" as="image" href="assets/images/banner/21.webp" >
     <link rel="stylesheet preload" href="assets/css/style.css" as="style">
-    <link rel="stylesheet" href="assets/css/aroseglink.css">
+    <link rel="stylesheet" href="assets/css/aroseglink.css?v=20261003_v2">
 </head>
 
 <body>
@@ -107,9 +109,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title-area-left center">
-                        <span class="bg-title">Gallery</span>
+                        <span class="bg-title">Visual Portfolio</span>
                         <h1 class="title">
-                            Gallery
+                            Corporate Gallery
                         </h1>
                     </div>
                 </div>
@@ -117,80 +119,767 @@
         </div>
     </div>
     <!-- partners area breadcrumb area end -->
-     <!-- rts galllery area start -->
+
+<style>
+/* Scoped Gallery Section Header & Filter Overrides */
+.gallery-section-badge {
+    color: #E51A24 !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    font-size: 13px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    margin-bottom: 10px !important;
+}
+.gallery-main-title {
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    margin-bottom: 12px !important;
+    font-size: 34px !important;
+    line-height: 1.25 !important;
+}
+.gallery-sub-lead {
+    max-width: 740px !important;
+    margin: 0 auto 35px !important;
+    color: #64748b !important;
+    font-size: 15px !important;
+    line-height: 1.65 !important;
+}
+.gallery-segmented-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 40px !important;
+    width: 100% !important;
+}
+.gallery-segmented-nav {
+    display: inline-flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: #f1f5f9 !important;
+    padding: 6px !important;
+    border-radius: 50px !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04) !important;
+    width: auto !important;
+    max-width: 100% !important;
+}
+.gallery-segmented-nav button.gallery-filter-btn,
+.gallery-segmented-nav .gallery-filter-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: max-content !important;
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    background: transparent !important;
+    color: #475569 !important;
+    border: none !important;
+    border-radius: 40px !important;
+    padding: 10px 22px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    cursor: pointer !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    height: auto !important;
+}
+.gallery-segmented-nav button.gallery-filter-btn i,
+.gallery-segmented-nav .gallery-filter-btn i {
+    font-size: 13px !important;
+    margin-right: 7px !important;
+}
+.gallery-segmented-nav button.gallery-filter-btn:hover,
+.gallery-segmented-nav .gallery-filter-btn:hover {
+    color: #0f172a !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+.gallery-segmented-nav button.gallery-filter-btn.active,
+.gallery-segmented-nav .gallery-filter-btn.active {
+    background: #E51A24 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(229, 26, 36, 0.35) !important;
+}
+.gallery-segmented-nav button.gallery-filter-btn.active i,
+.gallery-segmented-nav .gallery-filter-btn.active i {
+    color: #ffffff !important;
+}
+.gallery-segmented-nav button.gallery-filter-btn .count-badge,
+.gallery-segmented-nav .gallery-filter-btn .count-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #e2e8f0 !important;
+    color: #475569 !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    padding: 2px 8px !important;
+    border-radius: 12px !important;
+    margin-left: 8px !important;
+    line-height: 1 !important;
+    height: 20px !important;
+    width: auto !important;
+}
+.gallery-segmented-nav button.gallery-filter-btn.active .count-badge,
+.gallery-segmented-nav .gallery-filter-btn.active .count-badge {
+    background: rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+}
+@media (max-width: 991px) {
+    .gallery-segmented-nav {
+        border-radius: 20px !important;
+        padding: 6px !important;
+        gap: 6px !important;
+    }
+    .gallery-segmented-nav button.gallery-filter-btn,
+    .gallery-segmented-nav .gallery-filter-btn {
+        padding: 8px 14px !important;
+        font-size: 13px !important;
+    }
+}
+@media (max-width: 767px) {
+    .gallery-segmented-wrapper {
+        overflow-x: auto !important;
+        justify-content: flex-start !important;
+        padding-bottom: 8px !important;
+    }
+    .gallery-segmented-nav {
+        flex-wrap: nowrap !important;
+        border-radius: 30px !important;
+        padding: 6px 10px !important;
+    }
+    .gallery-segmented-nav button.gallery-filter-btn,
+    .gallery-segmented-nav .gallery-filter-btn {
+        width: auto !important;
+        max-width: none !important;
+        padding: 8px 14px !important;
+        flex: 0 0 auto !important;
+    }
+}
+</style>
+
+    <!-- rts gallery area start -->
     <div class="rts-gallery-area rts-section-gap">
         <div class="container">
+            <div class="row mb--10 text-center">
+                <div class="col-12">
+                    <span class="gallery-section-badge"><i class="fa-solid fa-shapes"></i> Portfolio &amp; Global Operations</span>
+                    <h2 class="gallery-main-title">Aroseglink Global Showcase</h2>
+                    <p class="gallery-sub-lead">Direct admissions partnerships, purpose-built student accommodations (PBSA), prime international real estate investments, and corporate executive governance.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Filter Buttons -->
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="gallery-area-main-wrapper-4">
-                        <div class="row g-5">
-                            <div class="col-md-4">
-                                <div class="single-gallery">
-                                    <a href="assets/images/real/real_6.jpg" class="thumbnail gallery-image" title="Founder &amp; CEO">
-                                        <img src="assets/images/real/real_6.jpg" alt="Our Executive Team">
-                                    </a>
-                                    <div class="instagram">
-                                        <img src="assets/images/gallery/instagram.svg" alt="instagram.svg">
+                <div class="col-12">
+                    <div class="gallery-segmented-wrapper">
+                        <div class="gallery-segmented-nav">
+                            <button type="button" class="gallery-filter-btn active" data-filter="all">
+                                All Portfolio <span class="count-badge">30</span>
+                            </button>
+                            <button type="button" class="gallery-filter-btn" data-filter="study">
+                                <i class="fa-solid fa-graduation-cap"></i> Study Abroad &amp; Admissions <span class="count-badge">12</span>
+                            </button>
+                            <button type="button" class="gallery-filter-btn" data-filter="housing">
+                                <i class="fa-solid fa-hotel"></i> Student Accommodation <span class="count-badge">8</span>
+                            </button>
+                            <button type="button" class="gallery-filter-btn" data-filter="realestate">
+                                <i class="fa-solid fa-building"></i> Global Real Estate <span class="count-badge">5</span>
+                            </button>
+                            <button type="button" class="gallery-filter-btn" data-filter="leadership">
+                                <i class="fa-solid fa-user-tie"></i> Executive Leadership <span class="count-badge">5</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Items Grid -->
+            <div class="gallery-area-main-wrapper-4">
+                <div class="row g-4" id="gallery-grid">
+                    <!-- Item 1: Coventry University Partner -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="study">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/study-abroad/uk_coventry.jpg" class="thumbnail gallery-image" title="Coventry University UK Partner — Fast-Track Admissions &amp; Direct Placement Support">
+                                <img src="assets/images/study-abroad/uk_coventry.jpg" alt="Coventry University UK Partner" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-graduation-cap"></i> UK Partner</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Coventry University, UK</span>
+                                        <h5 class="gallery-title">Direct Admissions &amp; Fast-Track Visas</h5>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="single-gallery">
-                                    <a href="assets/images/real/real_2.jpg" class="thumbnail gallery-image" title="Searching for Affordable Universities in the UK">
-                                        <img src="assets/images/real/real_2.jpg" alt="Affordable UK Universities - Aroseglink Services Limited">
-                                    </a>
-                                    <div class="instagram">
-                                        <img src="assets/images/gallery/instagram.svg" alt="instagram.svg">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Canada DLI Institutions -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="study">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/study-abroad/canada.jpg" class="thumbnail gallery-image" title="Canada Study Visa Support — High Visa Success Rate for Designated Learning Institutions">
+                                <img src="assets/images/study-abroad/canada.jpg" alt="Canada Designated Learning Institutions" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-graduation-cap"></i> Study in Canada</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Ontario &amp; British Columbia</span>
+                                        <h5 class="gallery-title">Accredited DLI Placements &amp; Study Permits</h5>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="single-gallery">
-                                    <a href="assets/images/real/real_3.jpg" class="thumbnail gallery-image" title="Canada Study Visa &amp; DLI Placements">
-                                        <img src="assets/images/real/real_3.jpg" alt="Canada Study Visa &amp; Admissions - Aroseglink Services Limited">
-                                    </a>
-                                    <div class="instagram">
-                                        <img src="assets/images/gallery/instagram.svg" alt="instagram.svg">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: UK Scholarships & Placements -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="study">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/study-abroad/uk_scholarships.jpg" class="thumbnail gallery-image" title="UK University Scholarships — Undergraduate &amp; Postgraduate Funding Guidance">
+                                <img src="assets/images/study-abroad/uk_scholarships.jpg" alt="UK University Direct Placements & Scholarships" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-graduation-cap"></i> UK Scholarships</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Russell Group &amp; UK Unis</span>
+                                        <h5 class="gallery-title">University Direct Placements &amp; Scholarships</h5>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="single-gallery">
-                                    <a href="assets/images/real/real_7.jpg" class="thumbnail gallery-image" title="Executive Advisory &amp; Business Strategy">
-                                        <img src="assets/images/real/real_7.jpg" alt="Business Strategy &amp; Executive Leadership">
-                                    </a>
-                                    <div class="instagram">
-                                        <img src="assets/images/gallery/instagram.svg" alt="instagram.svg">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Australian Universities -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="study">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/study-abroad/australia.jpg" class="thumbnail gallery-image" title="Australian University Admissions &amp; Simplified Student Visa Framework Guidance">
+                                <img src="assets/images/study-abroad/australia.jpg" alt="Group of Eight & Top Australian Universities" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-graduation-cap"></i> Study in Australia</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Sydney, Melbourne &amp; Brisbane</span>
+                                        <h5 class="gallery-title">Top Australian Universities &amp; SSVF Visas</h5>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="single-gallery">
-                                    <a href="assets/images/real/real_5.jpg" class="thumbnail gallery-image" title="International Campus Life &amp; Global Study">
-                                        <img src="assets/images/real/real_5.jpg" alt="International Campus Life &amp; Study in Canada">
-                                    </a>
-                                    <div class="instagram">
-                                        <img src="assets/images/gallery/instagram.svg" alt="instagram.svg">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: USA Admissions & Visas -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="study">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/study-abroad/usa.jpg" class="thumbnail gallery-image" title="USA University Admissions &amp; Comprehensive F-1 Student Visa Counseling">
+                                <img src="assets/images/study-abroad/usa.jpg" alt="US Undergraduate & Graduate Admissions (F-1 Visa)" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-graduation-cap"></i> Study in USA</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">American Universities</span>
+                                        <h5 class="gallery-title">Undergraduate &amp; Master’s Admissions (F-1)</h5>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="single-gallery">
-                                    <a href="assets/images/real/real_1.jpg" class="thumbnail gallery-image" title="Coventry University Student Recruitment Partnership">
-                                        <img src="assets/images/real/real_1.jpg" alt="Coventry University Student Recruitment Partnership - Aroseglink">
-                                    </a>
-                                    <div class="instagram">
-                                        <img src="assets/images/gallery/instagram.svg" alt="instagram.svg">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 6: European Pathways -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="study">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/study-abroad/europe.jpg" class="thumbnail gallery-image" title="European University Pathways — Germany, France, Ireland &amp; Schengen Degrees">
+                                <img src="assets/images/study-abroad/europe.jpg" alt="European University Pathways & Low-Tuition Programs" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-graduation-cap"></i> European Pathways</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Schengen Area</span>
+                                        <h5 class="gallery-title">Low-Tuition University Degree Pathways</h5>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 7: International Convocation -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="study">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/study/hero_graduates.jpg" class="thumbnail gallery-image" title="International Student Convocation — Celebrating Aroseglink Alumni Globally">
+                                <img src="assets/images/study/hero_graduates.jpg" alt="International University Convocation & Graduation" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-graduation-cap"></i> Convocation</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Alumni Success</span>
+                                        <h5 class="gallery-title">International University Graduation Ceremonies</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 8: Personalized Educational Advisory -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="study">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/study-abroad/counseling.jpg" class="thumbnail gallery-image" title="Personalized Educational Advisory &amp; Career Course Alignment Session">
+                                <img src="assets/images/study-abroad/counseling.jpg" alt="One-on-One Personalized Educational Counseling" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-graduation-cap"></i> Advisory Session</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Strategic Counseling</span>
+                                        <h5 class="gallery-title">One-on-One Educational Advisory Session</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 9: Admissions Evaluation Desk -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="study">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/study/admissions_counseling.jpg" class="thumbnail gallery-image" title="Admissions Evaluation Desk — Transcript Verification &amp; Statement of Purpose Curation">
+                                <img src="assets/images/study/admissions_counseling.jpg" alt="Admissions Review & Academic Credential Assessment" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-graduation-cap"></i> Admissions Desk</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Application Review</span>
+                                        <h5 class="gallery-title">Document Verification &amp; SOP Curation</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 10: Historic UK University Campus -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="study">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/study/uk_campus.jpg" class="thumbnail gallery-image" title="Historic UK University Campus Life &amp; Collaborative Academic Atmosphere">
+                                <img src="assets/images/study/uk_campus.jpg" alt="Historic Campus Life & Academic Immersion" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-graduation-cap"></i> UK Campus Life</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">United Kingdom</span>
+                                        <h5 class="gallery-title">Historic Campus Grounds &amp; Student Life</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 11: Canadian University Campuses -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="study">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/study/canada_campus.jpg" class="thumbnail gallery-image" title="Canadian University Campuses — Cutting-Edge Labs &amp; Inclusive Student Community">
+                                <img src="assets/images/study/canada_campus.jpg" alt="Modern Campus Facilities & Student Research Labs" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-graduation-cap"></i> Canada Campus</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Canadian Higher Ed</span>
+                                        <h5 class="gallery-title">Cutting-Edge Research Facilities &amp; Labs</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 12: Canada Pre-Departure Orientation -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="study">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/about/study-canada.jpg" class="thumbnail gallery-image" title="Pre-Departure Student Orientation &amp; Settlement Briefing for Canada Cohorts">
+                                <img src="assets/images/about/study-canada.jpg" alt="Pre-Departure Cohort Orientation & Visa Readiness" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-graduation-cap"></i> Pre-Departure</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Student Briefing</span>
+                                        <h5 class="gallery-title">Canada Cohort Orientation &amp; Visa Readiness</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 13: Purpose-Built Student Residences -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="housing">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/banner/04.webp" class="thumbnail gallery-image" title="Modern Purpose-Built Student Accommodation (PBSA) — All-Inclusive Bills &amp; 24/7 Security">
+                                <img src="assets/images/banner/04.webp" alt="Modern Purpose-Built Student Accommodation" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-hotel"></i> PBSA Residences</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Global Student Housing</span>
+                                        <h5 class="gallery-title">Modern Purpose-Built Student Residences</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 14: Premium Ensuite Room -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="housing">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/new/study_1.jpg" class="thumbnail gallery-image" title="Premium Ensuite Student Room with Ergonomic Study Suite &amp; High-Speed Wi-Fi">
+                                <img src="assets/images/new/study_1.jpg" alt="Ensuite Bedroom with Dedicated Study Desk" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-hotel"></i> Ensuite Suite</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Private Accommodations</span>
+                                        <h5 class="gallery-title">Ensuite Bedroom with Dedicated Study Desk</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 15: Contemporary Studio Apartment -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="housing">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/new/study_2.jpg" class="thumbnail gallery-image" title="High-Spec Contemporary Student Residence Studio with Private En-Suite &amp; Kitchenette">
+                                <img src="assets/images/new/study_2.jpg" alt="Contemporary Student Studio Apartment" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-hotel"></i> Studio Residence</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Independent Living</span>
+                                        <h5 class="gallery-title">Contemporary Student Studio Apartment</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 16: Shared Communal Lounge -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="housing">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/new/study_3.jpg" class="thumbnail gallery-image" title="Shared Student Communal Lounge &amp; Collaborative Work Hub">
+                                <img src="assets/images/new/study_3.jpg" alt="Shared Social Lounge & Collaborative Area" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-hotel"></i> Communal Hub</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Student Community</span>
+                                        <h5 class="gallery-title">Shared Social Lounge &amp; Collaborative Area</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 17: Urban Housing Complex -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="housing">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/real/real_5.jpg" class="thumbnail gallery-image" title="Transit-Linked Student Housing Complex Near Premier University Campuses">
+                                <img src="assets/images/real/real_5.jpg" alt="Transit-Linked Student Housing Complex" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-hotel"></i> Urban PBSA</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Global Cities</span>
+                                        <h5 class="gallery-title">Transit-Linked Student Housing Complex</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 18: Coventry University Residences -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="housing">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/real/real_1.jpg" class="thumbnail gallery-image" title="Verified Student Accommodations Walking Distance to Coventry University">
+                                <img src="assets/images/real/real_1.jpg" alt="Verified Student Housing Near Coventry University" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-hotel"></i> Coventry PBSA</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">United Kingdom</span>
+                                        <h5 class="gallery-title">Verified Housing Near Coventry University</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 19: Downtown Toronto Residences -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="housing">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/real/real_3.jpg" class="thumbnail gallery-image" title="Downtown Toronto Student Residences with Rapid Transit to UofT &amp; TMU">
+                                <img src="assets/images/real/real_3.jpg" alt="Downtown Toronto Student Housing Residence" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-hotel"></i> Toronto Living</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Downtown Toronto</span>
+                                        <h5 class="gallery-title">Student Residences &amp; Transit Corridor</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 20: Private Studio Apartment -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="housing">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/real/real_4.jpg" class="thumbnail gallery-image" title="Self-Contained Student Studio with Modern Kitchenette &amp; Private Bath">
+                                <img src="assets/images/real/real_4.jpg" alt="Self-Contained Student Studio Suite" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-hotel"></i> Private Studio</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Self-Contained</span>
+                                        <h5 class="gallery-title">Self-Contained Student Studio Suite</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 21: Prime Commercial & Luxury Estates -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="realestate">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/service/real-estate-luxury.webp" class="thumbnail gallery-image" title="Prime Commercial &amp; Luxury Residential Real Estate Acquisitions">
+                                <img src="assets/images/service/real-estate-luxury.webp" alt="Prime Commercial & Luxury Residential Estates" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-building"></i> Luxury Estates</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">High-Yield Portfolios</span>
+                                        <h5 class="gallery-title">Prime Commercial &amp; Luxury Residential Estates</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 22: Architectural Property Development -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="realestate">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/real/real_8.jpg" class="thumbnail gallery-image" title="High-Yield Architectural Property Development &amp; Construction Oversight">
+                                <img src="assets/images/real/real_8.jpg" alt="Architectural Grandeur & Property Development" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-building"></i> Development</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Capital Growth</span>
+                                        <h5 class="gallery-title">Architectural Grandeur &amp; Property Development</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 23: International Real Estate Portfolios -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="realestate">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/real/real_2.jpg" class="thumbnail gallery-image" title="International Real Estate Portfolio &amp; Strategic Cross-Border Wealth Preservation">
+                                <img src="assets/images/real/real_2.jpg" alt="International Portfolios & Wealth Management" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-building"></i> Global Portfolio</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Wealth Preservation</span>
+                                        <h5 class="gallery-title">International Portfolios &amp; Wealth Management</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 24: Abuja - Dubai Property Corridor -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="realestate">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/blog/blog-abuja-dubai.webp" class="thumbnail gallery-image" title="Strategic Real Estate Investments Across the Abuja - Dubai Economic Corridor">
+                                <img src="assets/images/blog/blog-abuja-dubai.webp" alt="Cross-Border Real Estate Opportunities" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-building"></i> Abuja - Dubai</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Cross-Border Assets</span>
+                                        <h5 class="gallery-title">Cross-Border Real Estate Opportunities</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 25: Institutional Corporate Infrastructure -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="realestate">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/about/hero.jpg" class="thumbnail gallery-image" title="Corporate Headquarters &amp; Institutional Commercial Property Infrastructure">
+                                <img src="assets/images/about/hero.jpg" alt="Corporate Headquarters & Commercial Holdings" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-building"></i> Corporate Assets</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Institutional Assets</span>
+                                        <h5 class="gallery-title">Corporate Headquarters &amp; Commercial Holdings</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 26: Dr. Julius Aroba -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="leadership">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/team/julius-aroba.webp" class="thumbnail gallery-image" title="Dr. Julius Aroba — Founder &amp; Executive Chairman, Aroseglink Group">
+                                <img src="assets/images/team/julius-aroba.webp" alt="Dr. Julius Aroba — Founder & Chairman" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-user-tie"></i> Executive Chairman</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Founding Leadership</span>
+                                        <h5 class="gallery-title">Dr. Julius Aroba — Founder &amp; Chairman</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 27: Sarah Aroba -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="leadership">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/team/sarah-aroba.jpg" class="thumbnail gallery-image" title="Sarah Aroba — Executive Director, Aroseglink Services Limited">
+                                <img src="assets/images/team/sarah-aroba.jpg" alt="Sarah Aroba — Executive Director" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-user-tie"></i> Executive Director</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Board Member</span>
+                                        <h5 class="gallery-title">Sarah Aroba — Executive Director</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 28: Kenneth Bello -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="leadership">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/team/kenneth-bello.jpg" class="thumbnail gallery-image" title="Kenneth Bello — Senior Educational Consultant &amp; Admissions Strategist">
+                                <img src="assets/images/team/kenneth-bello.jpg" alt="Kenneth Bello — Admissions Strategist" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-user-tie"></i> Senior Consultant</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Advisory Council</span>
+                                        <h5 class="gallery-title">Kenneth Bello — Admissions Strategist</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 29: Francis Daniel -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="leadership">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/team/francis-daniel.jpg" class="thumbnail gallery-image" title="Francis Daniel — Head of Global Operations &amp; Regulatory Compliance">
+                                <img src="assets/images/team/francis-daniel.jpg" alt="Francis Daniel — Head of Global Operations" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-user-tie"></i> Global Operations</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Logistics &amp; Compliance</span>
+                                        <h5 class="gallery-title">Francis Daniel — Head of Global Operations</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 30: Board of Directors -->
+                    <div class="col-lg-4 col-md-6 col-12 gallery-item-col" data-category="leadership">
+                        <div class="single-gallery-card">
+                            <a href="assets/images/about/executive_team.jpg" class="thumbnail gallery-image" title="Aroseglink Executive Board of Directors &amp; Strategic Governance Council">
+                                <img src="assets/images/about/executive_team.jpg" alt="Executive Board & Advisory Council" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-top-meta">
+                                        <span class="gallery-badge"><i class="fa-solid fa-user-tie"></i> Board Council</span>
+                                        <span class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    </div>
+                                    <div class="gallery-caption-meta">
+                                        <span class="gallery-sub">Strategic Governance</span>
+                                        <h5 class="gallery-title">Executive Board &amp; Advisory Council</h5>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- rts galllery area end -->
+    <!-- rts gallery area end -->
     <!-- rts cta area start -->
     <div class="rts-cta-area-inner bg_image ptb--100">
         <div class="container">
@@ -468,6 +1157,60 @@
 <script defer src="assets/js/vendor/waw.js"></script>
 
 <script defer src="assets/js/main.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item-col');
+
+        function updateLightbox() {
+            if (window.jQuery && jQuery.fn.magnificPopup) {
+                jQuery('.gallery-item-col:not(.is-hidden) .gallery-image').magnificPopup({
+                    type: 'image',
+                    gallery: {
+                        enabled: true
+                    },
+                    image: {
+                        titleSrc: function (item) {
+                            return item.el.attr('title') || '';
+                        }
+                    }
+                });
+            }
+        }
+
+        // Initialize lightbox on window load or when jQuery is ready
+        window.addEventListener('load', updateLightbox);
+        setTimeout(updateLightbox, 500);
+
+        filterBtns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                const filterVal = this.getAttribute('data-filter');
+
+                filterBtns.forEach(function (b) { b.classList.remove('active'); });
+                this.classList.add('active');
+
+                galleryItems.forEach(function (item) {
+                    const cat = item.getAttribute('data-category');
+                    if (filterVal === 'all' || cat === filterVal) {
+                        item.classList.remove('is-hidden');
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(10px)';
+                        setTimeout(function () {
+                            item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 20);
+                    } else {
+                        item.classList.add('is-hidden');
+                    }
+                });
+
+                // Update lightbox items after filter change
+                setTimeout(updateLightbox, 100);
+            });
+        });
+    });
+</script>
 </body>
 
 </html>

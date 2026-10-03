@@ -89,7 +89,7 @@ if (substr($trimmed, 0, 1) === '{' || substr($trimmed, 0, 1) === '[') {
 // 2. If Casita returned SSR HTML 
 $buildings = [];
 
-// Strategy A: Extract from Next.js __NEXT_DATA__
+// Strategy A: Extract from Next.js NEXT_DATA 
 if (preg_match('/<script id=\"__NEXT_DATA__\"[^>]*>(.*?)<\/script>/s', $response, $matches)) {
     $nextData = json_decode($matches[1], true);
     if (isset($nextData['props']['pageProps']['buildings']['buildings']) && is_array($nextData['props']['pageProps']['buildings']['buildings'])) {
